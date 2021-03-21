@@ -1,0 +1,2449 @@
+
+local Ez2 = Instance.new("ScreenGui")
+local Frame = Instance.new("Frame")
+local UICorner = Instance.new("UICorner")
+local TextLabel = Instance.new("TextLabel")
+local TextButton = Instance.new("TextButton")
+local TextButton_2 = Instance.new("TextButton")
+local TextButton_3 = Instance.new("TextButton")
+local Page1Frame = Instance.new("Frame")
+local Fly = Instance.new("TextButton")
+local KillAll = Instance.new("TextButton")
+local Unban = Instance.new("TextButton")
+local Godmode = Instance.new("TextButton")
+local Target = Instance.new("TextButton")
+local Spec = Instance.new("TextButton")
+local Unspec = Instance.new("TextButton")
+local Goto = Instance.new("TextButton")
+local FreeFists = Instance.new("TextButton")
+local Noclip = Instance.new("TextButton")
+local FistReach = Instance.new("TextButton")
+local AutoStomp = Instance.new("TextButton")
+local AntiStomp = Instance.new("TextButton")
+local AntiBan = Instance.new("TextButton")
+local AntiBag = Instance.new("TextButton")
+local TextBox = Instance.new("TextBox")
+local Page2Frame = Instance.new("Frame")
+local DracoMod = Instance.new("TextButton")
+local Zoom = Instance.new("TextButton")
+local AutoArrest = Instance.new("TextButton")
+local GodmodeV2 = Instance.new("TextButton")
+local FastRpg = Instance.new("TextButton")
+local MoneyEsp = Instance.new("TextButton")
+local KnifeReach = Instance.new("TextButton")
+local PPStopsing = Instance.new("TextButton")
+local Unjail = Instance.new("TextButton")
+local RpgControl = Instance.new("TextButton")
+local BurgetShield = Instance.new("TextButton")
+local Headless = Instance.new("TextButton")
+local FlyBypass = Instance.new("TextButton")
+local BuyArmor = Instance.new("TextButton")
+local Autofarm = Instance.new("TextButton")
+local Page3Frame = Instance.new("Frame")
+local AimlockV2 = Instance.new("TextButton")
+local Btools = Instance.new("TextButton")
+local SavePos = Instance.new("TextButton")
+local PPKnife = Instance.new("TextButton")
+local Annoymus = Instance.new("TextButton")
+local SplitG = Instance.new("TextButton")
+local HollyCross = Instance.new("TextButton")
+local SilentAim = Instance.new("TextButton")
+local AimlockTool = Instance.new("TextButton")
+local Rejoin = Instance.new("TextButton")
+local Esp = Instance.new("TextButton")
+local Hulk = Instance.new("TextButton")
+local Boneless = Instance.new("TextButton")
+local BuyMask = Instance.new("TextButton")
+local BagAll = Instance.new("TextButton")
+local Naked = Instance.new("TextButton")
+local function ShrinkName()
+	TextBox.FocusLost:connect(function()
+		for i,v in pairs(game.Players:GetChildren()) do
+			if (string.sub(string.lower(v.Name),1,string.len(TextBox.Text))) == string.lower(TextBox.Text) then
+				TextBox.Text = v.Name
+			end
+		end
+	end)
+end
+
+ShrinkName()
+function findPlayer(name)
+	name = name:lower()
+	if name == 'me' then
+		return game:GetService'Players'.LocalPlayer
+	end
+	for i,v in pairs(game:GetService'Players':GetPlayers()) do
+		if v.Name:lower():find(name) == 1 then
+			return v
+		end
+	end
+end
+
+--Properties:
+
+Ez2.Name = "Ez2"
+Ez2.Parent = game.CoreGui
+
+Frame.Parent = Ez2
+Frame.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+Frame.BorderSizePixel = 0
+Frame.Position = UDim2.new(0.18359375, 0, 0.193227097, 0)
+Frame.Size = UDim2.new(0, 505, 0, 329)
+
+UICorner.Parent = Frame
+
+TextLabel.Parent = Frame
+TextLabel.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+TextLabel.BorderSizePixel = 0
+TextLabel.Position = UDim2.new(0, 0, 0.0293159615, 0)
+TextLabel.Size = UDim2.new(0, 505, 0, 50)
+TextLabel.Font = Enum.Font.SourceSans
+TextLabel.Text = "Da Hood Hub"
+TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel.TextScaled = true
+TextLabel.TextSize = 14.000
+TextLabel.TextWrapped = true
+
+TextButton.Parent = Frame
+TextButton.BackgroundColor3 = Color3.fromRGB(55, 55, 55)
+TextButton.BorderSizePixel = 0
+TextButton.Position = UDim2.new(0.382178217, 0, 0.178509563, 0)
+TextButton.Size = UDim2.new(0, 119, 0, 45)
+TextButton.Font = Enum.Font.SourceSans
+TextButton.Text = "Page 2"
+TextButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextButton.TextScaled = true
+TextButton.TextSize = 14.000
+TextButton.TextWrapped = true
+TextButton.MouseButton1Down:Connect(function()
+	Page1Frame.Visible = false
+	Page2Frame.Visible = true
+	Page3Frame.Visible = false
+end)
+
+TextButton_2.Parent = Frame
+TextButton_2.BackgroundColor3 = Color3.fromRGB(55, 55, 55)
+TextButton_2.BorderSizePixel = 0
+TextButton_2.Position = UDim2.new(0.0712871253, 0, 0.178509563, 0)
+TextButton_2.Size = UDim2.new(0, 119, 0, 45)
+TextButton_2.Font = Enum.Font.SourceSans
+TextButton_2.Text = "Page 1"
+TextButton_2.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextButton_2.TextScaled = true
+TextButton_2.TextSize = 14.000
+TextButton_2.TextWrapped = true
+TextButton_2.MouseButton1Down:Connect(function()
+	Page1Frame.Visible = true
+	Page2Frame.Visible = false
+	Page3Frame.Visible = false
+end)
+
+TextButton_3.Parent = Frame
+TextButton_3.BackgroundColor3 = Color3.fromRGB(55, 55, 55)
+TextButton_3.BorderSizePixel = 0
+TextButton_3.Position = UDim2.new(0.704950452, 0, 0.178509563, 0)
+TextButton_3.Size = UDim2.new(0, 119, 0, 45)
+TextButton_3.Font = Enum.Font.SourceSans
+TextButton_3.Text = "Page 3"
+TextButton_3.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextButton_3.TextScaled = true
+TextButton_3.TextSize = 14.000
+TextButton_3.TextWrapped = true
+TextButton_3.MouseButton1Down:Connect(function()
+	Page1Frame.Visible = false
+	Page2Frame.Visible = false
+	Page3Frame.Visible = true
+end)
+
+
+Page1Frame.Name = "Page1Frame"
+Page1Frame.Parent = Frame
+Page1Frame.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+Page1Frame.BorderSizePixel = 0
+Page1Frame.Position = UDim2.new(0.0415841602, 0, 0.346504569, 0)
+Page1Frame.Size = UDim2.new(0, 454, 0, 197)
+Page1Frame.Visible = false
+
+Fly.Name = "Fly"
+Fly.Parent = Page1Frame
+Fly.BackgroundColor3 = Color3.fromRGB(55, 55, 55)
+Fly.BorderSizePixel = 0
+Fly.Position = UDim2.new(0, 0, 0.126903549, 0)
+Fly.Size = UDim2.new(0, 72, 0, 44)
+Fly.Font = Enum.Font.SourceSansBold
+Fly.Text = "Fly"
+Fly.TextColor3 = Color3.fromRGB(255, 255, 255)
+Fly.TextSize = 14.000
+Fly.MouseButton1Down:Connect(function()
+	local plr = game.Players.LocalPlayer
+	local mouse = plr:GetMouse()
+	local Humanoid = game.Players.LocalPlayer.Character.Humanoid or game.Players.LocalPlayer.Character.humanoid  
+
+	localplayer = plr
+
+	if workspace:FindFirstChild("Core") then
+		workspace.Core:Destroy()
+	end
+
+	local Core = Instance.new("Part")
+	Core.Name = "Core"
+	Core.Size = Vector3.new(0.05, 0.05, 0.05)
+
+	spawn(function()
+		Core.Parent = workspace
+		local Weld = Instance.new("Weld", Core)
+		Weld.Part0 = Core
+		Weld.Part1 = localplayer.Character.LowerTorso
+		Weld.C0 = CFrame.new(0, 0, 0)
+	end)
+
+	workspace:WaitForChild("Core")
+
+	local torso = workspace.Core
+	flying = true
+	local speed=10
+	local keys={a=false,d=false,w=false,s=false} 
+	local e1
+	local e2
+	local function start()
+		local pos = Instance.new("BodyPosition",torso)
+		local gyro = Instance.new("BodyGyro",torso)
+		pos.Name="EPIXPOS"
+		pos.maxForce = Vector3.new(math.huge, math.huge, math.huge)
+		pos.position = torso.Position
+		gyro.maxTorque = Vector3.new(9e9, 9e9, 9e9) 
+		gyro.cframe = torso.CFrame
+		repeat
+			wait()
+			Humanoid.PlatformStand=true
+			local new=gyro.cframe - gyro.cframe.p + pos.position
+			if not keys.w and not keys.s and not keys.a and not keys.d then
+				speed=5
+			end
+			if keys.w then 
+				new = new + workspace.CurrentCamera.CoordinateFrame.lookVector * speed
+				speed=speed+0
+			end
+			if keys.s then 
+				new = new - workspace.CurrentCamera.CoordinateFrame.lookVector * speed
+				speed=speed+0
+			end
+			if keys.d then 
+				new = new * CFrame.new(speed,0,0)
+				speed=speed+0
+			end
+			if keys.a then 
+				new = new * CFrame.new(-speed,0,0)
+				speed=speed+0
+			end
+			if speed>10 then
+				speed=5
+			end
+			pos.position=new.p
+			if keys.w then
+				gyro.cframe = workspace.CurrentCamera.CoordinateFrame*CFrame.Angles(-math.rad(speed*0),0,0)
+			elseif keys.s then
+				gyro.cframe = workspace.CurrentCamera.CoordinateFrame*CFrame.Angles(math.rad(speed*0),0,0)
+			else
+				gyro.cframe = workspace.CurrentCamera.CoordinateFrame
+			end
+		until flying == false
+		if gyro then gyro:Destroy() end
+		if pos then pos:Destroy() end
+		flying=false
+		Humanoid.PlatformStand=false
+		speed=10
+	end
+	e1=mouse.KeyDown:connect(function(key)
+		if not torso or not torso.Parent then flying=false e1:disconnect() e2:disconnect() return end
+		if key=="w" then
+			keys.w=true
+		elseif key=="s" then
+			keys.s=true
+		elseif key=="a" then
+			keys.a=true
+		elseif key=="d" then
+			keys.d=true
+		elseif key=="x" then
+			if flying==true then
+				flying=false
+			else
+				flying=true
+				start()
+			end
+		end
+	end)
+	e2=mouse.KeyUp:connect(function(key)
+		if key=="w" then
+			keys.w=false
+		elseif key=="s" then
+			keys.s=false
+		elseif key=="a" then
+			keys.a=false
+		elseif key=="d" then
+			keys.d=false
+		end
+	end)
+	start()
+end)
+
+KillAll.Name = "KillAll"
+KillAll.Parent = Page1Frame
+KillAll.BackgroundColor3 = Color3.fromRGB(55, 55, 55)
+KillAll.BorderSizePixel = 0
+KillAll.Position = UDim2.new(0.209251106, 0, 0.126903549, 0)
+KillAll.Size = UDim2.new(0, 77, 0, 44)
+KillAll.Font = Enum.Font.SourceSansBold
+KillAll.Text = "KillAll"
+KillAll.TextColor3 = Color3.fromRGB(255, 255, 255)
+KillAll.TextSize = 14.000
+KillAll.MouseButton1Down:Connect(function()
+	local plr = game.Players.LocalPlayer
+	local lastpos = plr.Character.HumanoidRootPart.CFrame
+	local playercount; local greadecount; local pp = {}
+	local cock = true
+	for I in pairs(game.Players:GetPlayers()) do
+		playercount = I
+	end
+
+	game:GetService('RunService').Stepped:connect(function()
+		setsimulationradius(math.huge)
+	end)
+
+	spawn(function()
+		while cock do wait()
+			for i, v in pairs(game.Workspace.Ignored:GetChildren()) do
+				if v.Name == "Handle" then
+					for index in pairs(pp) do
+						table.insert(pp, v)
+					end
+					v.Name = tostring(i)
+				end
+			end
+		end
+	end)
+
+	repeat wait()
+		plr.Character.HumanoidRootPart.CFrame = game.Workspace.Ignored.Shop["[Grenade] - $700"].Head.CFrame
+		fireclickdetector(game.Workspace.Ignored.Shop["[Grenade] - $700"].ClickDetector)
+		for ii, vv in pairs(plr.Backpack:GetChildren()) do
+			grenadecount = ii
+		end
+	until grenadecount >= playercount
+	plr.Character.HumanoidRootPart.CFrame = lastpos
+
+	for i, v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
+		spawn(function()
+			if v.Name == "[Grenade]" then
+				v.Parent = plr.Character; v:Activate(); wait(0.1); v:Deactivate(); wait(0.1); v:Activate()
+			end
+		end)
+	end
+
+	for i, v in pairs(game.Players:GetPlayers()) do
+		if v ~= plr then
+			local mover = Instance.new("BodyPosition", pp[1])
+			mover.P = 1e5
+			table.remove(pp, 1)
+			spawn(function()
+				while wait() do
+					mover.Position = v.Character.HumanoidRootPart.Position
+				end
+			end)
+		end
+	end
+	cock = false
+end)
+
+Unban.Name = "Unban"
+Unban.Parent = Page1Frame
+Unban.BackgroundColor3 = Color3.fromRGB(55, 55, 55)
+Unban.BorderSizePixel = 0
+Unban.Position = UDim2.new(0.416299552, 0, 0.126903549, 0)
+Unban.Size = UDim2.new(0, 75, 0, 44)
+Unban.Font = Enum.Font.SourceSansBold
+Unban.Text = "Unban"
+Unban.TextColor3 = Color3.fromRGB(255, 255, 255)
+Unban.TextSize = 14.000
+Unban.MouseButton1Down:Connect(function()
+	--[[
+IronBrew:tm: obfuscation; Version 2.7.2
+]]
+	return(function(new_IIIIllIllIIIlIIIlIIIIll,new_IllIIlllIlIllIllIl,new_IllIIlllIlIllIllIl)local new_llllllllIllllIlllII=string.char;local new_IIlIlIlllIIIIIllIl=string.sub;local new_IIIIllIlIIlIIIIIlII=table.concat;local new_IIIlIllllIIIllIllll=math.ldexp;local new_IllllIllIllIIlIll=getfenv or function()return _ENV end;local new_llIIlllIlIlIIIlllIIllIIll=select;local new_IllIlIIlIlIIllllIIIlIII=unpack or table.unpack;local new_lIlllIIlllIIIIlIII=tonumber;local function new_lIlIlIIIllIlIIlIllI(new_IllIlIIIlIII)local new_IlIIIlIlllIlIllIlIIII,new_IlIllllIIIIlIIIIIIlI,new_IlIllllIlIllIIIlIIllIllI="","",{}local new_IIlIIIlIllIIlll=256;local new_IllIlIIlIlIIllllIIIlIII={}for new_IllIIlllIlIllIllIl=0,new_IIlIIIlIllIIlll-1 do new_IllIlIIlIlIIllllIIIlIII[new_IllIIlllIlIllIllIl]=new_llllllllIllllIlllII(new_IllIIlllIlIllIllIl)end;local new_IllIIlllIlIllIllIl=1;local function new_IIIIllIllIIIlIIIlIIIIll()local new_IlIIIlIlllIlIllIlIIII=new_lIlllIIlllIIIIlIII(new_IIlIlIlllIIIIIllIl(new_IllIlIIIlIII,new_IllIIlllIlIllIllIl,new_IllIIlllIlIllIllIl),36)new_IllIIlllIlIllIllIl=new_IllIIlllIlIllIllIl+1;local new_IlIllllIIIIlIIIIIIlI=new_lIlllIIlllIIIIlIII(new_IIlIlIlllIIIIIllIl(new_IllIlIIIlIII,new_IllIIlllIlIllIllIl,new_IllIIlllIlIllIllIl+new_IlIIIlIlllIlIllIlIIII-1),36)new_IllIIlllIlIllIllIl=new_IllIIlllIlIllIllIl+new_IlIIIlIlllIlIllIlIIII;return new_IlIllllIIIIlIIIIIIlI end;new_IlIIIlIlllIlIllIlIIII=new_llllllllIllllIlllII(new_IIIIllIllIIIlIIIlIIIIll())new_IlIllllIlIllIIIlIIllIllI[1]=new_IlIIIlIlllIlIllIlIIII;while new_IllIIlllIlIllIllIl<#new_IllIlIIIlIII do local new_IllIIlllIlIllIllIl=new_IIIIllIllIIIlIIIlIIIIll()if new_IllIlIIlIlIIllllIIIlIII[new_IllIIlllIlIllIllIl]then new_IlIllllIIIIlIIIIIIlI=new_IllIlIIlIlIIllllIIIlIII[new_IllIIlllIlIllIllIl]else new_IlIllllIIIIlIIIIIIlI=new_IlIIIlIlllIlIllIlIIII..new_IIlIlIlllIIIIIllIl(new_IlIIIlIlllIlIllIlIIII,1,1)end;new_IllIlIIlIlIIllllIIIlIII[new_IIlIIIlIllIIlll]=new_IlIIIlIlllIlIllIlIIII..new_IIlIlIlllIIIIIllIl(new_IlIllllIIIIlIIIIIIlI,1,1)new_IlIllllIlIllIIIlIIllIllI[#new_IlIllllIlIllIIIlIIllIllI+1],new_IlIIIlIlllIlIllIlIIII,new_IIlIIIlIllIIlll=new_IlIllllIIIIlIIIIIIlI,new_IlIllllIIIIlIIIIIIlI,new_IIlIIIlIllIIlll+1 end;return table.concat(new_IlIllllIlIllIIIlIIllIllI)end;local new_lIlllIIlllIIIIlIII=new_lIlIlIIIllIlIIlIllI('22A22727522621Z275227161X21O21N21A1X2182162262242791X21621K22621Y2791S21821P2162161X1821M21222622327921421A1Y27I21X2791821621N1S21621P21L21227H2262202791C1W27U27Y280288275161Y21A2142161321A2192161Z2812791128527I27827521P28H21021P1W1Z29222N2791D21A21821021429D21M1X21728M1Z28N23G22622128L29E29U28J27921529D1Y1T181D27K27922724V1W1F2932751S21221H27I2222791Q1B2121Y23H2A92AA2752AS27521F2621F2AV22723J25L2AE2AL28S28U28W22622J27921P21921J21A21O21O28B21221723922O22O23E23C23D2BQ23E23B2262B52271S1W29P21727P27921K28N21021O21R29K27I28K2AG2BY29Q162C022G2BB2BD2BF2BH21N2BJ2BL22O23F2BQ23H23F23E23H23E23I23E2A12751V1Z21A21I2121X21422722629W279131W1W21R2162C029X2751P29E21M2862B022722Z1F22722V27922L22F2792262792332AT22722522722L2762272AS2E42E12272822752DZ2E92E22AL2E82822DH2AA2E22EB2E02752E22E82DX2DX2EC2E52DX2EP2E22E22CA2752882DN2E527K2E223J2AA27827Q2E82E221W2DY2EO2E921V2E32AU22721U2DT2752822FK2752E82AL2FO2EK2272AL2E229H2D72272882EP21T2E921S2DY2BA2EX2E92E827K2FX2FH2EA22722M2FL2FU2272GB2E829X2E82FT29X2FW2E52G22F52E522K2272BA2FA2FY2ET2EE2G82E227K22I2DT2CG28222H2E02EL2E92F62E92CG2DV2HC2E222E22722D2B12FE22C2HJ2HL2E922B2272742AT2ES2AT');local new_IllIIlllIlIllIllIl=(bit or bit32);local new_IlIllllIlIllIIIlIIllIllI=new_IllIIlllIlIllIllIl and new_IllIIlllIlIllIllIl.bxor or function(new_IllIIlllIlIllIllIl,new_IlIllllIIIIlIIIIIIlI)local new_IlIIIlIlllIlIllIlIIII,new_IlIllllIlIllIIIlIIllIllI,new_IIlIlIlllIIIIIllIl=1,0,10 while new_IllIIlllIlIllIllIl>0 and new_IlIllllIIIIlIIIIIIlI>0 do local new_IllIlIIlIlIIllllIIIlIII,new_IIlIlIlllIIIIIllIl=new_IllIIlllIlIllIllIl%2,new_IlIllllIIIIlIIIIIIlI%2 if new_IllIlIIlIlIIllllIIIlIII~=new_IIlIlIlllIIIIIllIl then new_IlIllllIlIllIIIlIIllIllI=new_IlIllllIlIllIIIlIIllIllI+new_IlIIIlIlllIlIllIlIIII end new_IllIIlllIlIllIllIl,new_IlIllllIIIIlIIIIIIlI,new_IlIIIlIlllIlIllIlIIII=(new_IllIIlllIlIllIllIl-new_IllIlIIlIlIIllllIIIlIII)/2,(new_IlIllllIIIIlIIIIIIlI-new_IIlIlIlllIIIIIllIl)/2,new_IlIIIlIlllIlIllIlIIII*2 end if new_IllIIlllIlIllIllIl<new_IlIllllIIIIlIIIIIIlI then new_IllIIlllIlIllIllIl=new_IlIllllIIIIlIIIIIIlI end while new_IllIIlllIlIllIllIl>0 do local new_IlIllllIIIIlIIIIIIlI=new_IllIIlllIlIllIllIl%2 if new_IlIllllIIIIlIIIIIIlI>0 then new_IlIllllIlIllIIIlIIllIllI=new_IlIllllIlIllIIIlIIllIllI+new_IlIIIlIlllIlIllIlIIII end new_IllIIlllIlIllIllIl,new_IlIIIlIlllIlIllIlIIII=(new_IllIIlllIlIllIllIl-new_IlIllllIIIIlIIIIIIlI)/2,new_IlIIIlIlllIlIllIlIIII*2 end return new_IlIllllIlIllIIIlIIllIllI end local function new_IlIllllIIIIlIIIIIIlI(new_IlIIIlIlllIlIllIlIIII,new_IllIIlllIlIllIllIl,new_IlIllllIIIIlIIIIIIlI)if new_IlIllllIIIIlIIIIIIlI then local new_IllIIlllIlIllIllIl=(new_IlIIIlIlllIlIllIlIIII/2^(new_IllIIlllIlIllIllIl-1))%2^((new_IlIllllIIIIlIIIIIIlI-1)-(new_IllIIlllIlIllIllIl-1)+1);return new_IllIIlllIlIllIllIl-new_IllIIlllIlIllIllIl%1;else local new_IllIIlllIlIllIllIl=2^(new_IllIIlllIlIllIllIl-1);return(new_IlIIIlIlllIlIllIlIIII%(new_IllIIlllIlIllIllIl+new_IllIIlllIlIllIllIl)>=new_IllIIlllIlIllIllIl)and 1 or 0;end;end;local new_IllIIlllIlIllIllIl=1;local function new_IlIIIlIlllIlIllIlIIII()local new_IIlIlIlllIIIIIllIl,new_IllIlIIlIlIIllllIIIlIII,new_IlIIIlIlllIlIllIlIIII,new_IlIllllIIIIlIIIIIIlI=new_IIIIllIllIIIlIIIlIIIIll(new_lIlllIIlllIIIIlIII,new_IllIIlllIlIllIllIl,new_IllIIlllIlIllIllIl+3);new_IIlIlIlllIIIIIllIl=new_IlIllllIlIllIIIlIIllIllI(new_IIlIlIlllIIIIIllIl,79)new_IllIlIIlIlIIllllIIIlIII=new_IlIllllIlIllIIIlIIllIllI(new_IllIlIIlIlIIllllIIIlIII,79)new_IlIIIlIlllIlIllIlIIII=new_IlIllllIlIllIIIlIIllIllI(new_IlIIIlIlllIlIllIlIIII,79)new_IlIllllIIIIlIIIIIIlI=new_IlIllllIlIllIIIlIIllIllI(new_IlIllllIIIIlIIIIIIlI,79)new_IllIIlllIlIllIllIl=new_IllIIlllIlIllIllIl+4;return(new_IlIllllIIIIlIIIIIIlI*16777216)+(new_IlIIIlIlllIlIllIlIIII*65536)+(new_IllIlIIlIlIIllllIIIlIII*256)+new_IIlIlIlllIIIIIllIl;end;local function new_IllIlIIIlIII()local new_IlIIIlIlllIlIllIlIIII=new_IlIllllIlIllIIIlIIllIllI(new_IIIIllIllIIIlIIIlIIIIll(new_lIlllIIlllIIIIlIII,new_IllIIlllIlIllIllIl,new_IllIIlllIlIllIllIl),79);new_IllIIlllIlIllIllIl=new_IllIIlllIlIllIllIl+1;return new_IlIIIlIlllIlIllIlIIII;end;local function new_IIlIIIlIllIIlll()local new_IlIllllIIIIlIIIIIIlI,new_IlIIIlIlllIlIllIlIIII=new_IIIIllIllIIIlIIIlIIIIll(new_lIlllIIlllIIIIlIII,new_IllIIlllIlIllIllIl,new_IllIIlllIlIllIllIl+2);new_IlIllllIIIIlIIIIIIlI=new_IlIllllIlIllIIIlIIllIllI(new_IlIllllIIIIlIIIIIIlI,79)new_IlIIIlIlllIlIllIlIIII=new_IlIllllIlIllIIIlIIllIllI(new_IlIIIlIlllIlIllIlIIII,79)new_IllIIlllIlIllIllIl=new_IllIIlllIlIllIllIl+2;return(new_IlIIIlIlllIlIllIlIIII*256)+new_IlIllllIIIIlIIIIIIlI;end;local function new_lIlIlIIIllIlIIlIllI()local new_IlIllllIlIllIIIlIIllIllI=new_IlIIIlIlllIlIllIlIIII();local new_IllIIlllIlIllIllIl=new_IlIIIlIlllIlIllIlIIII();local new_IIlIlIlllIIIIIllIl=1;local new_IlIllllIlIllIIIlIIllIllI=(new_IlIllllIIIIlIIIIIIlI(new_IllIIlllIlIllIllIl,1,20)*(2^32))+new_IlIllllIlIllIIIlIIllIllI;local new_IlIIIlIlllIlIllIlIIII=new_IlIllllIIIIlIIIIIIlI(new_IllIIlllIlIllIllIl,21,31);local new_IllIIlllIlIllIllIl=((-1)^new_IlIllllIIIIlIIIIIIlI(new_IllIIlllIlIllIllIl,32));if(new_IlIIIlIlllIlIllIlIIII==0)then if(new_IlIllllIlIllIIIlIIllIllI==0)then return new_IllIIlllIlIllIllIl*0;else new_IlIIIlIlllIlIllIlIIII=1;new_IIlIlIlllIIIIIllIl=0;end;elseif(new_IlIIIlIlllIlIllIlIIII==2047)then return(new_IlIllllIlIllIIIlIIllIllI==0)and(new_IllIIlllIlIllIllIl*(1/0))or(new_IllIIlllIlIllIllIl*(0/0));end;return new_IIIlIllllIIIllIllll(new_IllIIlllIlIllIllIl,new_IlIIIlIlllIlIllIlIIII-1023)*(new_IIlIlIlllIIIIIllIl+(new_IlIllllIlIllIIIlIIllIllI/(2^52)));end;local new_Illlllll=new_IlIIIlIlllIlIllIlIIII;local function new_IIIlIllllIIIllIllll(new_IlIIIlIlllIlIllIlIIII)local new_IlIllllIIIIlIIIIIIlI;if(not new_IlIIIlIlllIlIllIlIIII)then new_IlIIIlIlllIlIllIlIIII=new_Illlllll();if(new_IlIIIlIlllIlIllIlIIII==0)then return'';end;end;new_IlIllllIIIIlIIIIIIlI=new_IIlIlIlllIIIIIllIl(new_lIlllIIlllIIIIlIII,new_IllIIlllIlIllIllIl,new_IllIIlllIlIllIllIl+new_IlIIIlIlllIlIllIlIIII-1);new_IllIIlllIlIllIllIl=new_IllIIlllIlIllIllIl+new_IlIIIlIlllIlIllIlIIII;local new_IlIIIlIlllIlIllIlIIII={}for new_IllIIlllIlIllIllIl=1,#new_IlIllllIIIIlIIIIIIlI do new_IlIIIlIlllIlIllIlIIII[new_IllIIlllIlIllIllIl]=new_llllllllIllllIlllII(new_IlIllllIlIllIIIlIIllIllI(new_IIIIllIllIIIlIIIlIIIIll(new_IIlIlIlllIIIIIllIl(new_IlIllllIIIIlIIIIIIlI,new_IllIIlllIlIllIllIl,new_IllIIlllIlIllIllIl)),79))end return new_IIIIllIlIIlIIIIIlII(new_IlIIIlIlllIlIllIlIIII);end;local new_IllIIlllIlIllIllIl=new_IlIIIlIlllIlIllIlIIII;local function new_Illlllll(...)return{...},new_llIIlllIlIlIIIlllIIllIIll('#',...)end local function new_llllllllIllllIlllII()local new_llIIlllIlIlIIIlllIIllIIll={};local new_lIlllIIlllIIIIlIII={};local new_IllIIlllIlIllIllIl={};local new_IIIIllIllIIIlIIIlIIIIll={[#{{294;243;590;992};{332;957;100;785};}]=new_lIlllIIlllIIIIlIII,[#{{548;773;809;936};"1 + 1 = 111";"1 + 1 = 111";}]=nil,[#{"1 + 1 = 111";{700;808;208;757};"1 + 1 = 111";"1 + 1 = 111";}]=new_IllIIlllIlIllIllIl,[#{"1 + 1 = 111";}]=new_llIIlllIlIlIIIlllIIllIIll,};local new_IllIIlllIlIllIllIl=new_IlIIIlIlllIlIllIlIIII()local new_IIlIlIlllIIIIIllIl={}for new_IlIllllIIIIlIIIIIIlI=1,new_IllIIlllIlIllIllIl do local new_IlIIIlIlllIlIllIlIIII=new_IllIlIIIlIII();local new_IllIIlllIlIllIllIl;if(new_IlIIIlIlllIlIllIlIIII==0)then new_IllIIlllIlIllIllIl=(new_IllIlIIIlIII()~=0);elseif(new_IlIIIlIlllIlIllIlIIII==3)then new_IllIIlllIlIllIllIl=new_lIlIlIIIllIlIIlIllI();elseif(new_IlIIIlIlllIlIllIlIIII==1)then new_IllIIlllIlIllIllIl=new_IIIlIllllIIIllIllll();end;new_IIlIlIlllIIIIIllIl[new_IlIllllIIIIlIIIIIIlI]=new_IllIIlllIlIllIllIl;end;new_IIIIllIllIIIlIIIlIIIIll[3]=new_IllIlIIIlIII();for new_IIIIllIllIIIlIIIlIIIIll=1,new_IlIIIlIlllIlIllIlIIII()do local new_IllIIlllIlIllIllIl=new_IllIlIIIlIII();if(new_IlIllllIIIIlIIIIIIlI(new_IllIIlllIlIllIllIl,1,1)==0)then local new_IlIllllIlIllIIIlIIllIllI=new_IlIllllIIIIlIIIIIIlI(new_IllIIlllIlIllIllIl,2,3);local new_IllIlIIlIlIIllllIIIlIII=new_IlIllllIIIIlIIIIIIlI(new_IllIIlllIlIllIllIl,4,6);local new_IllIIlllIlIllIllIl={new_IIlIIIlIllIIlll(),new_IIlIIIlIllIIlll(),nil,nil};if(new_IlIllllIlIllIIIlIIllIllI==0)then new_IllIIlllIlIllIllIl[#("uU1")]=new_IIlIIIlIllIIlll();new_IllIIlllIlIllIllIl[#("I3ln")]=new_IIlIIIlIllIIlll();elseif(new_IlIllllIlIllIIIlIIllIllI==1)then new_IllIIlllIlIllIllIl[#("bk5")]=new_IlIIIlIlllIlIllIlIIII();elseif(new_IlIllllIlIllIIIlIIllIllI==2)then new_IllIIlllIlIllIllIl[#("CCz")]=new_IlIIIlIlllIlIllIlIIII()-(2^16)elseif(new_IlIllllIlIllIIIlIIllIllI==3)then new_IllIIlllIlIllIllIl[#("ShH")]=new_IlIIIlIlllIlIllIlIIII()-(2^16)new_IllIIlllIlIllIllIl[#("JQW3")]=new_IIlIIIlIllIIlll();end;if(new_IlIllllIIIIlIIIIIIlI(new_IllIlIIlIlIIllllIIIlIII,1,1)==1)then new_IllIIlllIlIllIllIl[#("5V")]=new_IIlIlIlllIIIIIllIl[new_IllIIlllIlIllIllIl[#("BG")]]end if(new_IlIllllIIIIlIIIIIIlI(new_IllIlIIlIlIIllllIIIlIII,2,2)==1)then new_IllIIlllIlIllIllIl[#("dH4")]=new_IIlIlIlllIIIIIllIl[new_IllIIlllIlIllIllIl[#("rdl")]]end if(new_IlIllllIIIIlIIIIIIlI(new_IllIlIIlIlIIllllIIIlIII,3,3)==1)then new_IllIIlllIlIllIllIl[#("kv5A")]=new_IIlIlIlllIIIIIllIl[new_IllIIlllIlIllIllIl[#("xe0L")]]end new_llIIlllIlIlIIIlllIIllIIll[new_IIIIllIllIIIlIIIlIIIIll]=new_IllIIlllIlIllIllIl;end end;for new_IllIIlllIlIllIllIl=1,new_IlIIIlIlllIlIllIlIIII()do new_lIlllIIlllIIIIlIII[new_IllIIlllIlIllIllIl-1]=new_llllllllIllllIlllII();end;return new_IIIIllIllIIIlIIIlIIIIll;end;local function new_IIIlIllllIIIllIllll(new_IllIIlllIlIllIllIl,new_IlIIIlIlllIlIllIlIIII,new_IllIlIIIlIII)new_IllIIlllIlIllIllIl=(new_IllIIlllIlIllIllIl==true and new_llllllllIllllIlllII())or new_IllIIlllIlIllIllIl;return(function(...)local new_IlIllllIlIllIIIlIIllIllI=new_IllIIlllIlIllIllIl[1];local new_IIlIlIlllIIIIIllIl=new_IllIIlllIlIllIllIl[3];local new_IllIIlllIlIllIllIl=new_IllIIlllIlIllIllIl[2];local new_llllllllIllllIlllII=new_Illlllll local new_IlIIIlIlllIlIllIlIIII=1;local new_IIlIIIlIllIIlll=-1;local new_lIlIlIIIllIlIIlIllI={};local new_IIIIllIllIIIlIIIlIIIIll={...};local new_lIlllIIlllIIIIlIII=new_llIIlllIlIlIIIlllIIllIIll('#',...)-1;local new_IllIIlllIlIllIllIl={};local new_IlIllllIIIIlIIIIIIlI={};for new_IllIIlllIlIllIllIl=0,new_lIlllIIlllIIIIlIII do if(new_IllIIlllIlIllIllIl>=new_IIlIlIlllIIIIIllIl)then new_lIlIlIIIllIlIIlIllI[new_IllIIlllIlIllIllIl-new_IIlIlIlllIIIIIllIl]=new_IIIIllIllIIIlIIIlIIIIll[new_IllIIlllIlIllIllIl+1];else new_IlIllllIIIIlIIIIIIlI[new_IllIIlllIlIllIllIl]=new_IIIIllIllIIIlIIIlIIIIll[new_IllIIlllIlIllIllIl+#{{311;373;604;964};}];end;end;local new_IllIIlllIlIllIllIl=new_lIlllIIlllIIIIlIII-new_IIlIlIlllIIIIIllIl+1 local new_IllIIlllIlIllIllIl;local new_IIlIlIlllIIIIIllIl;while true do new_IllIIlllIlIllIllIl=new_IlIllllIlIllIIIlIIllIllI[new_IlIIIlIlllIlIllIlIIII];new_IIlIlIlllIIIIIllIl=new_IllIIlllIlIllIllIl[#("P")];if new_IIlIlIlllIIIIIllIl<=#("x5HoznD6QVU1")then if new_IIlIlIlllIIIIIllIl<=#("lcPAD")then if new_IIlIlIlllIIIIIllIl<=#("db")then if new_IIlIlIlllIIIIIllIl<=#("")then new_IlIllllIIIIlIIIIIIlI[new_IllIIlllIlIllIllIl[#("Kz")]]=new_IllIIlllIlIllIllIl[#("cxY")];elseif new_IIlIlIlllIIIIIllIl>#("d")then new_IlIllllIIIIlIIIIIIlI[new_IllIIlllIlIllIllIl[#("rF")]]=new_IllIIlllIlIllIllIl[#("TAj")];else new_IlIllllIIIIlIIIIIIlI[new_IllIIlllIlIllIllIl[#("VH")]]=new_IlIllllIIIIlIIIIIIlI[new_IllIIlllIlIllIllIl[#("ElO")]][new_IllIIlllIlIllIllIl[#("KqiB")]];end;elseif new_IIlIlIlllIIIIIllIl<=#("5vL")then new_IlIllllIIIIlIIIIIIlI[new_IllIIlllIlIllIllIl[#("uZ")]]=new_IlIllllIIIIlIIIIIIlI[new_IllIIlllIlIllIllIl[#("iFq")]];elseif new_IIlIlIlllIIIIIllIl==#("5xeE")then new_IlIllllIIIIlIIIIIIlI[new_IllIIlllIlIllIllIl[#("2E")]][new_IllIIlllIlIllIllIl[#{{525;111;766;49};{742;869;750;37};"1 + 1 = 111";}]]=new_IllIIlllIlIllIllIl[#("Jr05")];else do return end;end;elseif new_IIlIlIlllIIIIIllIl<=#("ZiXUkgnQ")then if new_IIlIlIlllIIIIIllIl<=#("DRdpCD")then new_IlIllllIIIIlIIIIIIlI[new_IllIIlllIlIllIllIl[#("OX")]][new_IllIIlllIlIllIllIl[#("res")]]=new_IllIIlllIlIllIllIl[#("kbrr")];elseif new_IIlIlIlllIIIIIllIl==#("cZH2vjp")then local new_IllIIlllIlIllIllIl=new_IllIIlllIlIllIllIl[#("bo")]new_IlIllllIIIIlIIIIIIlI[new_IllIIlllIlIllIllIl]=new_IlIllllIIIIlIIIIIIlI[new_IllIIlllIlIllIllIl](new_IllIlIIlIlIIllllIIIlIII(new_IlIllllIIIIlIIIIIIlI,new_IllIIlllIlIllIllIl+1,new_IIlIIIlIllIIlll))else local new_IlIIIlIlllIlIllIlIIII=new_IllIIlllIlIllIllIl[#{{116;213;167;12};"1 + 1 = 111";}];local new_IlIllllIlIllIIIlIIllIllI=new_IlIllllIIIIlIIIIIIlI[new_IllIIlllIlIllIllIl[#("j2n")]];new_IlIllllIIIIlIIIIIIlI[new_IlIIIlIlllIlIllIlIIII+1]=new_IlIllllIlIllIIIlIIllIllI;new_IlIllllIIIIlIIIIIIlI[new_IlIIIlIlllIlIllIlIIII]=new_IlIllllIlIllIIIlIIllIllI[new_IllIIlllIlIllIllIl[#{"1 + 1 = 111";"1 + 1 = 111";"1 + 1 = 111";{150;285;955;601};}]];end;elseif new_IIlIlIlllIIIIIllIl<=#("sE12iUyQxZ")then if new_IIlIlIlllIIIIIllIl>#("31Qsr0uUm")then local new_IIlIlIlllIIIIIllIl;new_IlIllllIIIIlIIIIIIlI[new_IllIIlllIlIllIllIl[#("Cb")]]=new_IlIllllIIIIlIIIIIIlI[new_IllIIlllIlIllIllIl[#("02Z")]];new_IlIIIlIlllIlIllIlIIII=new_IlIIIlIlllIlIllIlIIII+1;new_IllIIlllIlIllIllIl=new_IlIllllIlIllIIIlIIllIllI[new_IlIIIlIlllIlIllIlIIII];new_IIlIlIlllIIIIIllIl=new_IllIIlllIlIllIllIl[#("BS")]new_IlIllllIIIIlIIIIIIlI[new_IIlIlIlllIIIIIllIl]=new_IlIllllIIIIlIIIIIIlI[new_IIlIlIlllIIIIIllIl](new_IllIlIIlIlIIllllIIIlIII(new_IlIllllIIIIlIIIIIIlI,new_IIlIlIlllIIIIIllIl+1,new_IllIIlllIlIllIllIl[#("IPf")]))new_IlIIIlIlllIlIllIlIIII=new_IlIIIlIlllIlIllIlIIII+1;new_IllIIlllIlIllIllIl=new_IlIllllIlIllIIIlIIllIllI[new_IlIIIlIlllIlIllIlIIII];new_IlIllllIIIIlIIIIIIlI[new_IllIIlllIlIllIllIl[#("qQ")]][new_IllIIlllIlIllIllIl[#("vD6")]]=new_IllIIlllIlIllIllIl[#("Jfjn")];new_IlIIIlIlllIlIllIlIIII=new_IlIIIlIlllIlIllIlIIII+1;new_IllIIlllIlIllIllIl=new_IlIllllIlIllIIIlIIllIllI[new_IlIIIlIlllIlIllIlIIII];new_IlIllllIIIIlIIIIIIlI[new_IllIIlllIlIllIllIl[#("tP")]]=new_IllIlIIIlIII[new_IllIIlllIlIllIllIl[#{"1 + 1 = 111";{243;813;31;458};"1 + 1 = 111";}]];new_IlIIIlIlllIlIllIlIIII=new_IlIIIlIlllIlIllIlIIII+1;new_IllIIlllIlIllIllIl=new_IlIllllIlIllIIIlIIllIllI[new_IlIIIlIlllIlIllIlIIII];new_IlIllllIIIIlIIIIIIlI[new_IllIIlllIlIllIllIl[#{"1 + 1 = 111";"1 + 1 = 111";}]]=new_IlIllllIIIIlIIIIIIlI[new_IllIIlllIlIllIllIl[#("DQD")]][new_IllIIlllIlIllIllIl[#("qRXF")]];new_IlIIIlIlllIlIllIlIIII=new_IlIIIlIlllIlIllIlIIII+1;new_IllIIlllIlIllIllIl=new_IlIllllIlIllIIIlIIllIllI[new_IlIIIlIlllIlIllIlIIII];new_IlIllllIIIIlIIIIIIlI[new_IllIIlllIlIllIllIl[#("R6")]]=new_IllIIlllIlIllIllIl[#("p2V")];new_IlIIIlIlllIlIllIlIIII=new_IlIIIlIlllIlIllIlIIII+1;new_IllIIlllIlIllIllIl=new_IlIllllIlIllIIIlIIllIllI[new_IlIIIlIlllIlIllIlIIII];new_IlIllllIIIIlIIIIIIlI[new_IllIIlllIlIllIllIl[#("A6")]]=new_IllIIlllIlIllIllIl[#("B04")];new_IlIIIlIlllIlIllIlIIII=new_IlIIIlIlllIlIllIlIIII+1;new_IllIIlllIlIllIllIl=new_IlIllllIlIllIIIlIIllIllI[new_IlIIIlIlllIlIllIlIIII];new_IlIllllIIIIlIIIIIIlI[new_IllIIlllIlIllIllIl[#("fr")]]=new_IllIIlllIlIllIllIl[#("dMs")];new_IlIIIlIlllIlIllIlIIII=new_IlIIIlIlllIlIllIlIIII+1;new_IllIIlllIlIllIllIl=new_IlIllllIlIllIIIlIIllIllI[new_IlIIIlIlllIlIllIlIIII];new_IIlIlIlllIIIIIllIl=new_IllIIlllIlIllIllIl[#("er")]new_IlIllllIIIIlIIIIIIlI[new_IIlIlIlllIIIIIllIl]=new_IlIllllIIIIlIIIIIIlI[new_IIlIlIlllIIIIIllIl](new_IllIlIIlIlIIllllIIIlIII(new_IlIllllIIIIlIIIIIIlI,new_IIlIlIlllIIIIIllIl+1,new_IllIIlllIlIllIllIl[#("mxP")]))new_IlIIIlIlllIlIllIlIIII=new_IlIIIlIlllIlIllIlIIII+1;new_IllIIlllIlIllIllIl=new_IlIllllIlIllIIIlIIllIllI[new_IlIIIlIlllIlIllIlIIII];new_IlIllllIIIIlIIIIIIlI[new_IllIIlllIlIllIllIl[#("rz")]][new_IllIIlllIlIllIllIl[#("vxs")]]=new_IlIllllIIIIlIIIIIIlI[new_IllIIlllIlIllIllIl[#("xuCN")]];else local new_IlIIIlIlllIlIllIlIIII=new_IllIIlllIlIllIllIl[#("RG")]local new_IlIllllIlIllIIIlIIllIllI,new_IllIIlllIlIllIllIl=new_llllllllIllllIlllII(new_IlIllllIIIIlIIIIIIlI[new_IlIIIlIlllIlIllIlIIII](new_IllIlIIlIlIIllllIIIlIII(new_IlIllllIIIIlIIIIIIlI,new_IlIIIlIlllIlIllIlIIII+1,new_IllIIlllIlIllIllIl[#("AMQ")])))new_IIlIIIlIllIIlll=new_IllIIlllIlIllIllIl+new_IlIIIlIlllIlIllIlIIII-1 local new_IllIIlllIlIllIllIl=0;for new_IlIIIlIlllIlIllIlIIII=new_IlIIIlIlllIlIllIlIIII,new_IIlIIIlIllIIlll do new_IllIIlllIlIllIllIl=new_IllIIlllIlIllIllIl+1;new_IlIllllIIIIlIIIIIIlI[new_IlIIIlIlllIlIllIlIIII]=new_IlIllllIlIllIIIlIIllIllI[new_IllIIlllIlIllIllIl];end;end;elseif new_IIlIlIlllIIIIIllIl>#("2P4h43HHM7P")then local new_IlIIIlIlllIlIllIlIIII=new_IllIIlllIlIllIllIl[#("kZ")]new_IlIllllIIIIlIIIIIIlI[new_IlIIIlIlllIlIllIlIIII]=new_IlIllllIIIIlIIIIIIlI[new_IlIIIlIlllIlIllIlIIII](new_IllIlIIlIlIIllllIIIlIII(new_IlIllllIIIIlIIIIIIlI,new_IlIIIlIlllIlIllIlIIII+1,new_IllIIlllIlIllIllIl[#("4Lc")]))else local new_IlIIIlIlllIlIllIlIIII=new_IllIIlllIlIllIllIl[#("8u")]local new_IlIllllIlIllIIIlIIllIllI,new_IllIIlllIlIllIllIl=new_llllllllIllllIlllII(new_IlIllllIIIIlIIIIIIlI[new_IlIIIlIlllIlIllIlIIII](new_IllIlIIlIlIIllllIIIlIII(new_IlIllllIIIIlIIIIIIlI,new_IlIIIlIlllIlIllIlIIII+1,new_IllIIlllIlIllIllIl[#("0VT")])))new_IIlIIIlIllIIlll=new_IllIIlllIlIllIllIl+new_IlIIIlIlllIlIllIlIIII-1 local new_IllIIlllIlIllIllIl=0;for new_IlIIIlIlllIlIllIlIIII=new_IlIIIlIlllIlIllIlIIII,new_IIlIIIlIllIIlll do new_IllIIlllIlIllIllIl=new_IllIIlllIlIllIllIl+1;new_IlIllllIIIIlIIIIIIlI[new_IlIIIlIlllIlIllIlIIII]=new_IlIllllIlIllIIIlIIllIllI[new_IllIIlllIlIllIllIl];end;end;elseif new_IIlIlIlllIIIIIllIl<=#("tBRpuHSebQBfJbxHoc")then if new_IIlIlIlllIIIIIllIl<=#{"1 + 1 = 111";{926;235;975;938};"1 + 1 = 111";"1 + 1 = 111";{969;892;160;206};{778;89;836;399};{298;865;140;487};"1 + 1 = 111";{396;934;18;226};{489;620;355;883};"1 + 1 = 111";{857;959;697;559};{666;833;528;497};{148;4;577;799};{157;925;557;339};}then if new_IIlIlIlllIIIIIllIl<=#("oMcFXbiuloZJ2")then new_IlIllllIIIIlIIIIIIlI[new_IllIIlllIlIllIllIl[#("3e")]]=new_IlIllllIIIIlIIIIIIlI[new_IllIIlllIlIllIllIl[#("zOH")]];elseif new_IIlIlIlllIIIIIllIl>#("arJ6o0la2sKs1n")then new_IlIllllIIIIlIIIIIIlI[new_IllIIlllIlIllIllIl[#("1I")]]=new_IlIllllIIIIlIIIIIIlI[new_IllIIlllIlIllIllIl[#("hz0")]][new_IllIIlllIlIllIllIl[#("rVV6")]];else new_IlIllllIIIIlIIIIIIlI[new_IllIIlllIlIllIllIl[#("Jp")]]=new_IllIlIIIlIII[new_IllIIlllIlIllIllIl[#("VgL")]];end;elseif new_IIlIlIlllIIIIIllIl<=#("5JyKEi5mHny4XpKh")then local new_IllIIlllIlIllIllIl=new_IllIIlllIlIllIllIl[#("Dt")]new_IlIllllIIIIlIIIIIIlI[new_IllIIlllIlIllIllIl]=new_IlIllllIIIIlIIIIIIlI[new_IllIIlllIlIllIllIl](new_IllIlIIlIlIIllllIIIlIII(new_IlIllllIIIIlIIIIIIlI,new_IllIIlllIlIllIllIl+1,new_IIlIIIlIllIIlll))elseif new_IIlIlIlllIIIIIllIl==#("xu00l4CjxoTT4Fk4C")then local new_IlIIIlIlllIlIllIlIIII=new_IllIIlllIlIllIllIl[#("IO")]new_IlIllllIIIIlIIIIIIlI[new_IlIIIlIlllIlIllIlIIII]=new_IlIllllIIIIlIIIIIIlI[new_IlIIIlIlllIlIllIlIIII](new_IllIlIIlIlIIllllIIIlIII(new_IlIllllIIIIlIIIIIIlI,new_IlIIIlIlllIlIllIlIIII+1,new_IllIIlllIlIllIllIl[#("jfZ")]))else new_IlIllllIIIIlIIIIIIlI[new_IllIIlllIlIllIllIl[#("ox")]][new_IllIIlllIlIllIllIl[#("oNl")]]=new_IlIllllIIIIlIIIIIIlI[new_IllIIlllIlIllIllIl[#("rZ1s")]];end;elseif new_IIlIlIlllIIIIIllIl<=#("PC9zyeebT15yUsly6GxbU")then if new_IIlIlIlllIIIIIllIl<=#("5Ag3lENTmava5Pm77WW")then new_IlIllllIIIIlIIIIIIlI[new_IllIIlllIlIllIllIl[#("ov")]]=new_IllIlIIIlIII[new_IllIIlllIlIllIllIl[#{"1 + 1 = 111";{10;609;79;600};"1 + 1 = 111";}]];elseif new_IIlIlIlllIIIIIllIl==#("lLn9EBHGJPIAF9GJrE2L")then local new_IIlIlIlllIIIIIllIl;new_IlIllllIIIIlIIIIIIlI[new_IllIIlllIlIllIllIl[#("K8")]]=new_IlIllllIIIIlIIIIIIlI[new_IllIIlllIlIllIllIl[#("lxF")]][new_IllIIlllIlIllIllIl[#("ieNu")]];new_IlIIIlIlllIlIllIlIIII=new_IlIIIlIlllIlIllIlIIII+1;new_IllIIlllIlIllIllIl=new_IlIllllIlIllIIIlIIllIllI[new_IlIIIlIlllIlIllIlIIII];new_IlIllllIIIIlIIIIIIlI[new_IllIIlllIlIllIllIl[#("RN")]]=new_IllIIlllIlIllIllIl[#("XGi")];new_IlIIIlIlllIlIllIlIIII=new_IlIIIlIlllIlIllIlIIII+1;new_IllIIlllIlIllIllIl=new_IlIllllIlIllIIIlIIllIllI[new_IlIIIlIlllIlIllIlIIII];new_IlIllllIIIIlIIIIIIlI[new_IllIIlllIlIllIllIl[#("2o")]]=new_IllIIlllIlIllIllIl[#("2ZC")];new_IlIIIlIlllIlIllIlIIII=new_IlIIIlIlllIlIllIlIIII+1;new_IllIIlllIlIllIllIl=new_IlIllllIlIllIIIlIIllIllI[new_IlIIIlIlllIlIllIlIIII];new_IlIllllIIIIlIIIIIIlI[new_IllIIlllIlIllIllIl[#("uT")]]=new_IllIIlllIlIllIllIl[#("ZQE")];new_IlIIIlIlllIlIllIlIIII=new_IlIIIlIlllIlIllIlIIII+1;new_IllIIlllIlIllIllIl=new_IlIllllIlIllIIIlIIllIllI[new_IlIIIlIlllIlIllIlIIII];new_IlIllllIIIIlIIIIIIlI[new_IllIIlllIlIllIllIl[#("SG")]]=new_IllIIlllIlIllIllIl[#("HLS")];new_IlIIIlIlllIlIllIlIIII=new_IlIIIlIlllIlIllIlIIII+1;new_IllIIlllIlIllIllIl=new_IlIllllIlIllIIIlIIllIllI[new_IlIIIlIlllIlIllIlIIII];new_IIlIlIlllIIIIIllIl=new_IllIIlllIlIllIllIl[#("Ao")]new_IlIllllIIIIlIIIIIIlI[new_IIlIlIlllIIIIIllIl]=new_IlIllllIIIIlIIIIIIlI[new_IIlIlIlllIIIIIllIl](new_IllIlIIlIlIIllllIIIlIII(new_IlIllllIIIIlIIIIIIlI,new_IIlIlIlllIIIIIllIl+1,new_IllIIlllIlIllIllIl[#("b6o")]))new_IlIIIlIlllIlIllIlIIII=new_IlIIIlIlllIlIllIlIIII+1;new_IllIIlllIlIllIllIl=new_IlIllllIlIllIIIlIIllIllI[new_IlIIIlIlllIlIllIlIIII];new_IlIllllIIIIlIIIIIIlI[new_IllIIlllIlIllIllIl[#("vF")]][new_IllIIlllIlIllIllIl[#("Wgi")]]=new_IlIllllIIIIlIIIIIIlI[new_IllIIlllIlIllIllIl[#("bPin")]];new_IlIIIlIlllIlIllIlIIII=new_IlIIIlIlllIlIllIlIIII+1;new_IllIIlllIlIllIllIl=new_IlIllllIlIllIIIlIIllIllI[new_IlIIIlIlllIlIllIlIIII];new_IlIllllIIIIlIIIIIIlI[new_IllIIlllIlIllIllIl[#{"1 + 1 = 111";{386;282;641;621};}]][new_IllIIlllIlIllIllIl[#("KNh")]]=new_IllIIlllIlIllIllIl[#("Eg47")];new_IlIIIlIlllIlIllIlIIII=new_IlIIIlIlllIlIllIlIIII+1;new_IllIIlllIlIllIllIl=new_IlIllllIlIllIIIlIIllIllI[new_IlIIIlIlllIlIllIlIIII];new_IlIllllIIIIlIIIIIIlI[new_IllIIlllIlIllIllIl[#{{184;164;447;416};"1 + 1 = 111";}]]=new_IllIlIIIlIII[new_IllIIlllIlIllIllIl[#("F3W")]];new_IlIIIlIlllIlIllIlIIII=new_IlIIIlIlllIlIllIlIIII+1;new_IllIIlllIlIllIllIl=new_IlIllllIlIllIIIlIIllIllI[new_IlIIIlIlllIlIllIlIIII];new_IlIllllIIIIlIIIIIIlI[new_IllIIlllIlIllIllIl[#("36")]]=new_IlIllllIIIIlIIIIIIlI[new_IllIIlllIlIllIllIl[#("3a4")]][new_IllIIlllIlIllIllIl[#{{541;86;452;31};"1 + 1 = 111";"1 + 1 = 111";"1 + 1 = 111";}]];else do return end;end;elseif new_IIlIlIlllIIIIIllIl<=#("aO5bUxGl8ILpLDumhzV6gjI")then if new_IIlIlIlllIIIIIllIl==#("5F5jOPD3lUl6r7UdbuKg6j")then new_IlIllllIIIIlIIIIIIlI[new_IllIIlllIlIllIllIl[#("UT")]][new_IllIIlllIlIllIllIl[#("8s2")]]=new_IlIllllIIIIlIIIIIIlI[new_IllIIlllIlIllIllIl[#("0KOb")]];else local new_IIlIlIlllIIIIIllIl;new_IlIllllIIIIlIIIIIIlI[new_IllIIlllIlIllIllIl[#("zt")]]=new_IllIlIIIlIII[new_IllIIlllIlIllIllIl[#("Oqg")]];new_IlIIIlIlllIlIllIlIIII=new_IlIIIlIlllIlIllIlIIII+1;new_IllIIlllIlIllIllIl=new_IlIllllIlIllIIIlIIllIllI[new_IlIIIlIlllIlIllIlIIII];new_IIlIlIlllIIIIIllIl=new_IllIIlllIlIllIllIl[#{{555;58;986;332};"1 + 1 = 111";}]new_IlIllllIIIIlIIIIIIlI[new_IIlIlIlllIIIIIllIl]=new_IlIllllIIIIlIIIIIIlI[new_IIlIlIlllIIIIIllIl](new_IllIlIIlIlIIllllIIIlIII(new_IlIllllIIIIlIIIIIIlI,new_IIlIlIlllIIIIIllIl+1,new_IllIIlllIlIllIllIl[#("joJ")]))new_IlIIIlIlllIlIllIlIIII=new_IlIIIlIlllIlIllIlIIII+1;new_IllIIlllIlIllIllIl=new_IlIllllIlIllIIIlIIllIllI[new_IlIIIlIlllIlIllIlIIII];new_IlIllllIIIIlIIIIIIlI[new_IllIIlllIlIllIllIl[#("PR")]][new_IllIIlllIlIllIllIl[#("r1M")]]=new_IllIIlllIlIllIllIl[#("MKEU")];new_IlIIIlIlllIlIllIlIIII=new_IlIIIlIlllIlIllIlIIII+1;new_IllIIlllIlIllIllIl=new_IlIllllIlIllIIIlIIllIllI[new_IlIIIlIlllIlIllIlIIII];new_IlIllllIIIIlIIIIIIlI[new_IllIIlllIlIllIllIl[#{{508;983;257;617};"1 + 1 = 111";}]][new_IllIIlllIlIllIllIl[#("hQe")]]=new_IllIIlllIlIllIllIl[#{{679;270;20;667};"1 + 1 = 111";{112;712;746;24};{360;429;370;336};}];new_IlIIIlIlllIlIllIlIIII=new_IlIIIlIlllIlIllIlIIII+1;new_IllIIlllIlIllIllIl=new_IlIllllIlIllIIIlIIllIllI[new_IlIIIlIlllIlIllIlIIII];new_IlIllllIIIIlIIIIIIlI[new_IllIIlllIlIllIllIl[#("RZ")]][new_IllIIlllIlIllIllIl[#("x5S")]]=new_IllIIlllIlIllIllIl[#("mdCn")];new_IlIIIlIlllIlIllIlIIII=new_IlIIIlIlllIlIllIlIIII+1;new_IllIIlllIlIllIllIl=new_IlIllllIlIllIIIlIIllIllI[new_IlIIIlIlllIlIllIlIIII];new_IlIllllIIIIlIIIIIIlI[new_IllIIlllIlIllIllIl[#("zZ")]][new_IllIIlllIlIllIllIl[#("Scd")]]=new_IllIIlllIlIllIllIl[#("SlnU")];new_IlIIIlIlllIlIllIlIIII=new_IlIIIlIlllIlIllIlIIII+1;new_IllIIlllIlIllIllIl=new_IlIllllIlIllIIIlIIllIllI[new_IlIIIlIlllIlIllIlIIII];do return end;end;elseif new_IIlIlIlllIIIIIllIl==#("GlxkehOs0gDfpCxHsfSe0ry4")then local new_IIIIllIllIIIlIIIlIIIIll;local new_llIIlllIlIlIIIlllIIllIIll,new_lIlIlIIIllIlIIlIllI;local new_lIlllIIlllIIIIlIII;local new_IIlIlIlllIIIIIllIl;new_IlIllllIIIIlIIIIIIlI[new_IllIIlllIlIllIllIl[#("92")]]=new_IllIlIIIlIII[new_IllIIlllIlIllIllIl[#("3Sd")]];new_IlIIIlIlllIlIllIlIIII=new_IlIIIlIlllIlIllIlIIII+1;new_IllIIlllIlIllIllIl=new_IlIllllIlIllIIIlIIllIllI[new_IlIIIlIlllIlIllIlIIII];new_IlIllllIIIIlIIIIIIlI[new_IllIIlllIlIllIllIl[#("yi")]]=new_IlIllllIIIIlIIIIIIlI[new_IllIIlllIlIllIllIl[#("QCt")]][new_IllIIlllIlIllIllIl[#("k0X5")]];new_IlIIIlIlllIlIllIlIIII=new_IlIIIlIlllIlIllIlIIII+1;new_IllIIlllIlIllIllIl=new_IlIllllIlIllIIIlIIllIllI[new_IlIIIlIlllIlIllIlIIII];new_IlIllllIIIIlIIIIIIlI[new_IllIIlllIlIllIllIl[#("mS")]]=new_IllIIlllIlIllIllIl[#("d4k")];new_IlIIIlIlllIlIllIlIIII=new_IlIIIlIlllIlIllIlIIII+1;new_IllIIlllIlIllIllIl=new_IlIllllIlIllIIIlIIllIllI[new_IlIIIlIlllIlIllIlIIII];new_IlIllllIIIIlIIIIIIlI[new_IllIIlllIlIllIllIl[#("q8")]]=new_IllIlIIIlIII[new_IllIIlllIlIllIllIl[#("aKc")]];new_IlIIIlIlllIlIllIlIIII=new_IlIIIlIlllIlIllIlIIII+1;new_IllIIlllIlIllIllIl=new_IlIllllIlIllIIIlIIllIllI[new_IlIIIlIlllIlIllIlIIII];new_IIlIlIlllIIIIIllIl=new_IllIIlllIlIllIllIl[#("8L")];new_lIlllIIlllIIIIlIII=new_IlIllllIIIIlIIIIIIlI[new_IllIIlllIlIllIllIl[#("dvh")]];new_IlIllllIIIIlIIIIIIlI[new_IIlIlIlllIIIIIllIl+1]=new_lIlllIIlllIIIIlIII;new_IlIllllIIIIlIIIIIIlI[new_IIlIlIlllIIIIIllIl]=new_lIlllIIlllIIIIlIII[new_IllIIlllIlIllIllIl[#{{252;882;507;823};"1 + 1 = 111";"1 + 1 = 111";{36;276;365;175};}]];new_IlIIIlIlllIlIllIlIIII=new_IlIIIlIlllIlIllIlIIII+1;new_IllIIlllIlIllIllIl=new_IlIllllIlIllIIIlIIllIllI[new_IlIIIlIlllIlIllIlIIII];new_IlIllllIIIIlIIIIIIlI[new_IllIIlllIlIllIllIl[#("Ns")]]=new_IllIIlllIlIllIllIl[#("rHN")];new_IlIIIlIlllIlIllIlIIII=new_IlIIIlIlllIlIllIlIIII+1;new_IllIIlllIlIllIllIl=new_IlIllllIlIllIIIlIIllIllI[new_IlIIIlIlllIlIllIlIIII];new_IIlIlIlllIIIIIllIl=new_IllIIlllIlIllIllIl[#("XH")]new_llIIlllIlIlIIIlllIIllIIll,new_lIlIlIIIllIlIIlIllI=new_llllllllIllllIlllII(new_IlIllllIIIIlIIIIIIlI[new_IIlIlIlllIIIIIllIl](new_IllIlIIlIlIIllllIIIlIII(new_IlIllllIIIIlIIIIIIlI,new_IIlIlIlllIIIIIllIl+1,new_IllIIlllIlIllIllIl[#("6o2")])))new_IIlIIIlIllIIlll=new_lIlIlIIIllIlIIlIllI+new_IIlIlIlllIIIIIllIl-1 new_IIIIllIllIIIlIIIlIIIIll=0;for new_IllIIlllIlIllIllIl=new_IIlIlIlllIIIIIllIl,new_IIlIIIlIllIIlll do new_IIIIllIllIIIlIIIlIIIIll=new_IIIIllIllIIIlIIIlIIIIll+1;new_IlIllllIIIIlIIIIIIlI[new_IllIIlllIlIllIllIl]=new_llIIlllIlIlIIIlllIIllIIll[new_IIIIllIllIIIlIIIlIIIIll];end;new_IlIIIlIlllIlIllIlIIII=new_IlIIIlIlllIlIllIlIIII+1;new_IllIIlllIlIllIllIl=new_IlIllllIlIllIIIlIIllIllI[new_IlIIIlIlllIlIllIlIIII];new_IIlIlIlllIIIIIllIl=new_IllIIlllIlIllIllIl[#{{773;433;582;199};{23;386;333;405};}]new_IlIllllIIIIlIIIIIIlI[new_IIlIlIlllIIIIIllIl]=new_IlIllllIIIIlIIIIIIlI[new_IIlIlIlllIIIIIllIl](new_IllIlIIlIlIIllllIIIlIII(new_IlIllllIIIIlIIIIIIlI,new_IIlIlIlllIIIIIllIl+1,new_IIlIIIlIllIIlll))new_IlIIIlIlllIlIllIlIIII=new_IlIIIlIlllIlIllIlIIII+1;new_IllIIlllIlIllIllIl=new_IlIllllIlIllIIIlIIllIllI[new_IlIIIlIlllIlIllIlIIII];new_IlIllllIIIIlIIIIIIlI[new_IllIIlllIlIllIllIl[#("bu")]]=new_IllIlIIIlIII[new_IllIIlllIlIllIllIl[#{"1 + 1 = 111";"1 + 1 = 111";"1 + 1 = 111";}]];new_IlIIIlIlllIlIllIlIIII=new_IlIIIlIlllIlIllIlIIII+1;new_IllIIlllIlIllIllIl=new_IlIllllIlIllIIIlIIllIllI[new_IlIIIlIlllIlIllIlIIII];new_IlIllllIIIIlIIIIIIlI[new_IllIIlllIlIllIllIl[#("Er")]]=new_IlIllllIIIIlIIIIIIlI[new_IllIIlllIlIllIllIl[#("nkP")]][new_IllIIlllIlIllIllIl[#("JALH")]];else local new_IlIllllIlIllIIIlIIllIllI=new_IllIIlllIlIllIllIl[#("VF")];local new_IlIIIlIlllIlIllIlIIII=new_IlIllllIIIIlIIIIIIlI[new_IllIIlllIlIllIllIl[#("kce")]];new_IlIllllIIIIlIIIIIIlI[new_IlIllllIlIllIIIlIIllIllI+1]=new_IlIIIlIlllIlIllIlIIII;new_IlIllllIIIIlIIIIIIlI[new_IlIllllIlIllIIIlIIllIllI]=new_IlIIIlIlllIlIllIlIIII[new_IllIIlllIlIllIllIl[#("Blyi")]];end;new_IlIIIlIlllIlIllIlIIII=new_IlIIIlIlllIlIllIlIIII+1;end;end);end;return new_IIIlIllllIIIllIllll(true,{},new_IllllIllIllIIlIll())();end)(string.byte,table.insert,setmetatable);
+end)
+
+Godmode.Name = "Godmode"
+Godmode.Parent = Page1Frame
+Godmode.BackgroundColor3 = Color3.fromRGB(55, 55, 55)
+Godmode.BorderSizePixel = 0
+Godmode.Position = UDim2.new(0.627753317, 0, 0.126903549, 0)
+Godmode.Size = UDim2.new(0, 62, 0, 44)
+Godmode.Font = Enum.Font.SourceSansBold
+Godmode.Text = "Godmode"
+Godmode.TextColor3 = Color3.fromRGB(255, 255, 255)
+Godmode.TextSize = 14.000
+Godmode.MouseButton1Down:Connect(function()
+	local Plr = game.Players.LocalPlayer; Plr.Character.RagdollConstraints:Destroy(); Plr.Character.Head.Neck:Destroy(); repeat wait() until Plr.Character and Plr.Character:FindFirstChild("BodyEffects") and Plr.Character:FindFirstChild("Head") and Plr.Character.Head:FindFirstChild("Neck"); Plr.Character.BodyEffects.BreakingParts:Destroy(); wait(1); local pp = Instance.new("Folder", Plr.Character); pp.Name = "FULLY_LOADED_CHAR"
+end)
+
+Target.Name = "Target"
+Target.Parent = Page1Frame
+Target.BackgroundColor3 = Color3.fromRGB(55, 55, 55)
+Target.BorderSizePixel = 0
+Target.Position = UDim2.new(0.799559474, 0, 0.126903549, 0)
+Target.Size = UDim2.new(0, 62, 0, 41)
+Target.Font = Enum.Font.SourceSansBold
+Target.Text = "Target"
+Target.TextColor3 = Color3.fromRGB(255, 255, 255)
+Target.TextSize = 14.000
+Target.MouseButton1Down:Connect(function()
+	local localPlayer     = game:GetService("Players").LocalPlayer;
+	local localCharacter  = localPlayer.Character;
+	local Target          = findPlayer(TextBox.Text);
+
+	if Target and game.Players[Target.Name].Character.BodyEffects['K.O'].Value == false then
+		pcall(function()
+			localCharacter.LeftHand.LeftWrist:Destroy();
+			localCharacter.RightHand.RightWrist:Destroy();
+		end);
+		repeat
+			wait();
+			localCharacter.LeftHand.CFrame = game.Players[Target.Name].Character.LowerTorso.CFrame;
+			localCharacter.RightHand.CFrame = game.Players[Target.Name].Character.LowerTorso.CFrame;
+		until game.Players[Target.Name].Character.BodyEffects['K.O'].Value == true
+		game.StarterGui:SetCore("SendNotification", {
+			Title = "DaHoodHub";
+			Text = Target.Name .. "Lmao What a Noob Go Stomp Him He got Knocked";
+			Duration = 5;
+		})
+	elseif game.Players[Target.Name].Character.BodyEffects['K.O'].Value == true then
+		game.StarterGui:SetCore("SendNotification", {
+			Title = "DaHoodHub";
+			Text = Target.Name .. " Ez He already Knocked.";
+			Duration = 5;
+		})
+	end;
+end)
+
+Spec.Name = "Spec"
+Spec.Parent = Page1Frame
+Spec.BackgroundColor3 = Color3.fromRGB(55, 55, 55)
+Spec.BorderSizePixel = 0
+Spec.Position = UDim2.new(0, 0, 0.395939082, 0)
+Spec.Size = UDim2.new(0, 72, 0, 41)
+Spec.Font = Enum.Font.SourceSansBold
+Spec.Text = "Spec"
+Spec.TextColor3 = Color3.fromRGB(255, 255, 255)
+Spec.TextSize = 14.000
+Spec.MouseButton1Down:Connect(function()
+	local TargetPlr = TextBox.Text;
+	game.Workspace.Camera.CameraSubject = game.Players[TargetPlr].Character.Humanoid;
+	local A_1 = "[DaHoodHb] Spectating " .. TargetPlr .. "." local A_2 = "All" local Event = game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest Event:FireServer(A_1, A_2)
+end)
+
+Unspec.Name = "Unspec"
+Unspec.Parent = Page1Frame
+Unspec.BackgroundColor3 = Color3.fromRGB(55, 55, 55)
+Unspec.BorderSizePixel = 0
+Unspec.Position = UDim2.new(0.209251106, 0, 0.395939082, 0)
+Unspec.Size = UDim2.new(0, 77, 0, 41)
+Unspec.Font = Enum.Font.SourceSansBold
+Unspec.Text = "Unspec"
+Unspec.TextColor3 = Color3.fromRGB(255, 255, 255)
+Unspec.TextSize = 14.000
+Unspec.MouseButton1Down:Connect(function()
+	local TargetPlr = TextBox.Text;
+	local A_1 = "[DaHoodHub] Stopped Spectating " .. TargetPlr .. "." local A_2 = "All" local Event = game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest Event:FireServer(A_1, A_2)
+	game.Workspace.Camera.CameraSubject = game.Players.LocalPlayer.Character.Humanoid
+end)
+
+Goto.Name = "Goto"
+Goto.Parent = Page1Frame
+Goto.BackgroundColor3 = Color3.fromRGB(55, 55, 55)
+Goto.BorderSizePixel = 0
+Goto.Position = UDim2.new(0.416299552, 0, 0.395939082, 0)
+Goto.Size = UDim2.new(0, 75, 0, 41)
+Goto.Font = Enum.Font.SourceSansBold
+Goto.Text = "Goto"
+Goto.TextColor3 = Color3.fromRGB(255, 255, 255)
+Goto.TextSize = 14.000
+Goto.MouseButton1Down:Connect(function()
+	local TargetPlr = TextBox.Text;
+	wait(.30)
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players[TargetPlr].Character.HumanoidRootPart.CFrame
+end)
+
+FreeFists.Name = "FreeFists"
+FreeFists.Parent = Page1Frame
+FreeFists.BackgroundColor3 = Color3.fromRGB(55, 55, 55)
+FreeFists.BorderSizePixel = 0
+FreeFists.Position = UDim2.new(0.627753317, 0, 0.395939082, 0)
+FreeFists.Size = UDim2.new(0, 62, 0, 41)
+FreeFists.Font = Enum.Font.SourceSansBold
+FreeFists.Text = "Free Fists (V)"
+FreeFists.TextColor3 = Color3.fromRGB(255, 255, 255)
+FreeFists.TextSize = 14.000
+FreeFists.MouseButton1Down:Connect(function()
+	local Players = game:GetService("Players")
+	local RunService = game:GetService("RunService")
+
+	local LocalPlayer = Players.LocalPlayer
+	local Mouse = LocalPlayer:GetMouse()
+
+	local Character = LocalPlayer.Character
+	local RightHand = Character.RightHand
+
+	local Character = LocalPlayer.Character
+	local LeftHand = Character.LeftHand
+
+	wait(0)
+
+	local Box = Instance.new("SelectionBox")
+	Box.LineThickness = 1
+	Box.Color3 = Color3.new(1, 3, 1)
+	Box.Transparency = 0.1
+	Box.Adornee = RightHand
+	Box.Parent = RightHand
+
+	local Box = Instance.new("SelectionBox")
+	Box.LineThickness = 1
+	Box.Color3 = Color3.new(1, 2, 0)
+	Box.Transparency = 0.1
+	Box.Adornee = LeftHand
+	Box.Parent = LeftHand
+	game.StarterGui:SetCore("SendNotification", {
+		Title = "[DaHoodHub]";
+		Text = "Press V to Toggle";
+		Duration = 10;
+	})
+	-- // Variables
+	local localPlayer       = game:GetService("Players").LocalPlayer;
+	local localCharacter    = localPlayer.Character
+	local Mouse             = localPlayer:GetMouse();
+	local FistControl       = false
+	local LeftFist          = localCharacter.LeftHand;
+	local RightFist         = localCharacter.RightHand;
+
+	-- // Services
+	local uis = game:GetService("UserInputService");
+
+	-- // Removing Wrists
+	pcall(function()
+		LeftFist.LeftWrist:Destroy();
+		RightFist.RightWrist:Destroy();
+	end);
+
+	-- // Coroutine Loop + Functions
+	local loopFunction = function()
+		LeftFist.CFrame  = CFrame.new(Mouse.Hit.p);
+		RightFist.CFrame = CFrame.new(Mouse.Hit.p);
+	end;
+
+	local Loop
+
+	local Start = function()
+		Loop = game:GetService("RunService").Heartbeat:Connect(loopFunction);
+	end;
+
+	local Pause = function()
+		Loop:Disconnect()
+	end;
+
+	-- // Hotkeys
+	uis.InputBegan:connect(function(Key)
+		if (Key.KeyCode == Enum.KeyCode.V) then
+			if (FistControl == false) then
+				FistControl = true;
+				Start();
+			elseif (FistControl == true) then
+				FistControl = false;
+				Pause();
+				LeftFist.CFrame  = localPlayer.Character.LeftLowerArm.CFrame
+				RightFist.CFrame = localCharacter.RightLowerArn.CFrame
+			end;
+		end;
+	end);
+end)
+
+Noclip.Name = "Noclip"
+Noclip.Parent = Page1Frame
+Noclip.BackgroundColor3 = Color3.fromRGB(55, 55, 55)
+Noclip.BorderSizePixel = 0
+Noclip.Position = UDim2.new(0.799559474, 0, 0.395939082, 0)
+Noclip.Size = UDim2.new(0, 62, 0, 41)
+Noclip.Font = Enum.Font.SourceSansBold
+Noclip.Text = "Noclip [B]"
+Noclip.TextColor3 = Color3.fromRGB(255, 255, 255)
+Noclip.TextSize = 14.000
+Noclip.MouseButton1Down:Connect(function()
+	local h,char,play
+	play = game.Players.LocalPlayer
+	local uis = game:getService("UserInputService")
+	game:getService("RunService"):BindToRenderStep("",0,function()
+		char = play.Character
+		if char then h = char:findFirstChildOfClass("Humanoid") end
+		if not h then return end
+		if uis:IsKeyDown(Enum.KeyCode.B) then
+			h:ChangeState(11)
+		end
+	end)
+end)
+
+FistReach.Name = "FistReach"
+FistReach.Parent = Page1Frame
+FistReach.BackgroundColor3 = Color3.fromRGB(55, 55, 55)
+FistReach.BorderSizePixel = 0
+FistReach.Position = UDim2.new(0.0110132098, 0, 0.66497457, 0)
+FistReach.Size = UDim2.new(0, 62, 0, 41)
+FistReach.Font = Enum.Font.SourceSansBold
+FistReach.Text = "Fist Reach"
+FistReach.TextColor3 = Color3.fromRGB(255, 255, 255)
+FistReach.TextSize = 14.000
+FistReach.MouseButton1Down:Connect(function()
+	local fistreach = false
+	LP = game.Players.LocalPlayer
+	for i,v in ipairs(LP.Character:GetDescendants()) do
+		if v:IsA("MeshPart") then v.Massless = true
+			v.CanCollide = false
+			v.CustomPhysicalProperties = PhysicalProperties.new(0, 0, 0, 0, 0)
+
+		end
+	end
+
+	for i,v in ipairs(game.workspace:GetDescendants()) do
+		if v:IsA("Seat") then 
+			v.Disabled = true
+		end
+	end
+	x = 35
+	y = 35
+	z = 35
+
+
+	penis = Vector3.new(x,y,z)
+
+	LP.Character.RightHand.Size = penis
+
+	LP.Character.RightHand.Transparency = 1
+	local selectionBox = Instance.new("SelectionBox",LP.Character.RightHand)
+	selectionBox.Adornee = LP.Character.RightHand
+	selectionBox.Color3 = Color3.new(0.415686, 0.415686, 0.415686)
+
+	LP.Character.LeftHand.Size = penis
+	LP.Character.BodyEffects.SpecialParts.LeftHand.Size = penis
+
+	LP.Character.LeftHand.Transparency = 1
+	local selectionBox = Instance.new("SelectionBox",LP.Character.LeftHand)
+	selectionBox.Adornee = LP.Character.LeftHand
+	selectionBox.Color3 = Color3.new(0, 0, 0)
+end)
+
+AutoStomp.Name = "AutoStomp"
+AutoStomp.Parent = Page1Frame
+AutoStomp.BackgroundColor3 = Color3.fromRGB(55, 55, 55)
+AutoStomp.BorderSizePixel = 0
+AutoStomp.Position = UDim2.new(0.209251106, 0, 0.66497463, 0)
+AutoStomp.Size = UDim2.new(0, 77, 0, 41)
+AutoStomp.Font = Enum.Font.SourceSansBold
+AutoStomp.Text = "AutoStomp [P]"
+AutoStomp.TextColor3 = Color3.fromRGB(255, 255, 255)
+AutoStomp.TextSize = 14.000
+AutoStomp.MouseButton1Down:Connect(function()
+	Toggle = false
+
+	while wait(.5) do
+		local mouse = game.Players.LocalPlayer:GetMouse()
+
+		if Toggle == false then
+			game.ReplicatedStorage.MainEvent:FireServer("Stomp")
+			mouse.KeyDown:connect(function(k)
+				if k == "p" then
+					if Toggle == false then 
+						Toggle = true
+						print('Off')
+					elseif Toggle == true then 
+						print('On')
+						Toggle = false
+					end
+				end
+			end)
+		end
+	end
+end)
+
+AntiStomp.Name = "AntiStomp"
+AntiStomp.Parent = Page1Frame
+AntiStomp.BackgroundColor3 = Color3.fromRGB(55, 55, 55)
+AntiStomp.BorderSizePixel = 0
+AntiStomp.Position = UDim2.new(0.416299552, 0, 0.66497463, 0)
+AntiStomp.Size = UDim2.new(0, 75, 0, 41)
+AntiStomp.Font = Enum.Font.SourceSansBold
+AntiStomp.Text = "AntiStomp"
+AntiStomp.TextColor3 = Color3.fromRGB(255, 255, 255)
+AntiStomp.TextSize = 14.000
+AntiStomp.MouseButton1Down:Connect(function()
+	pcall(function() if tostring(game.PlaceId) == "2788229376" then local corepackages = game:GetService"CorePackages" local localplayer = game:GetService"Players".LocalPlayer local run = game:GetService"RunService" run:BindToRenderStep("rrrrrrrrrrr",2000,function() pcall(function() if localplayer.Character.Humanoid.Health <= 30 then localplayer.Character.Humanoid:UnequipTools() localplayer.Character.Humanoid:Destroy() workspace.CurrentCamera.CameraSubject = localplayer.Character wait() local prt = Instance.new("Model", corepackages); Instance.new("Part", prt).Name="Torso"; Instance.new("Part", prt).Name="Head"; Instance.new("Humanoid", prt).Name="Humanoid"; localplayer.Character=prt end end) pcall(function() if localplayer.Character.Humanoid.FloorMaterial == "Plastic" then ReplicatedStorage:FireServer("Stomp") end end) end) 
+		end end)
+end)
+
+AntiBan.Name = "AntiBan"
+AntiBan.Parent = Page1Frame
+AntiBan.BackgroundColor3 = Color3.fromRGB(55, 55, 55)
+AntiBan.BorderSizePixel = 0
+AntiBan.Position = UDim2.new(0.627753317, 0, 0.66497463, 0)
+AntiBan.Size = UDim2.new(0, 62, 0, 41)
+AntiBan.Font = Enum.Font.SourceSansBold
+AntiBan.Text = "AntiBan"
+AntiBan.TextColor3 = Color3.fromRGB(255, 255, 255)
+AntiBan.TextSize = 14.000
+AntiBan.MouseButton1Down:Connect(function()
+	local bitch = {
+		163721789,
+		15427717,
+		201454243,
+		822999,
+		63794379,
+		17260230,
+		28357488,
+		93101606,
+		8195210,
+		89473551,
+		16917269,
+		85989579,
+		1553950697,
+		476537893,
+		155627580,
+		31163456,
+		7200829,
+		25717070,
+		201454243,
+		15427717,
+		63794379,
+		16138978,
+		60660789,
+		17260230,
+		16138978,
+		1161411094,
+		9125623,
+		11319153,
+		34758833,
+		194109750,
+		35616559,
+		1257271138,
+		28885841,
+		23558830,
+		25717070,
+
+
+	}
+
+	for l, c in pairs(game.Players:GetChildren()) do
+		for i, v in pairs(bitch) do
+			if c.UserId == v then
+				local fuck6ex = game.Players.LocalPlayer
+				fuck6ex:Kick("Hoe Detected")
+			end
+		end
+	end
+	game.Players.PlayerAdded:Connect(function(plr)
+		for i, v in pairs(bitch) do
+			if plr.UserId == v then
+				local fuck6ex = game.Players.LocalPlayer
+				fuck6ex:Kick("Hoe Detected")
+			end
+		end
+	end)
+end)
+
+AntiBag.Name = "AntiBag"
+AntiBag.Parent = Page1Frame
+AntiBag.BackgroundColor3 = Color3.fromRGB(55, 55, 55)
+AntiBag.BorderSizePixel = 0
+AntiBag.Position = UDim2.new(0.799559474, 0, 0.66497463, 0)
+AntiBag.Size = UDim2.new(0, 62, 0, 41)
+AntiBag.Font = Enum.Font.SourceSansBold
+AntiBag.Text = "AntiBag"
+AntiBag.TextColor3 = Color3.fromRGB(255, 255, 255)
+AntiBag.TextSize = 14.000
+AntiBag.MouseButton1Down:Connect(function()
+	delay(0, function()
+		while wait() do
+			pcall(function()
+				if game.Players.LocalPlayer.Character:FindFirstChild("Christmas_Sock") then
+					game.Players.LocalPlayer.Character["Christmas_Sock"]:Destroy()
+				end
+			end)
+		end
+	end)
+end)
+
+TextBox.Parent = Page1Frame
+TextBox.BackgroundColor3 = Color3.fromRGB(55, 55, 55)
+TextBox.BorderSizePixel = 0
+TextBox.Position = UDim2.new(0.288546264, 0, 0.918781698, 0)
+TextBox.Size = UDim2.new(0, 200, 0, 23)
+TextBox.Font = Enum.Font.SourceSansBold
+TextBox.Text = "PlayerName"
+TextBox.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextBox.TextSize = 14.000
+
+Page2Frame.Name = "Page2Frame"
+Page2Frame.Parent = Frame
+Page2Frame.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+Page2Frame.BorderSizePixel = 0
+Page2Frame.Position = UDim2.new(0.0455445535, 0, 0.346504569, 0)
+Page2Frame.Size = UDim2.new(0, 452, 0, 193)
+Page2Frame.Visible = false
+
+DracoMod.Name = "DracoMod"
+DracoMod.Parent = Page2Frame
+DracoMod.BackgroundColor3 = Color3.fromRGB(55, 55, 55)
+DracoMod.BorderSizePixel = 0
+DracoMod.Position = UDim2.new(0.0442477874, 0, 0.0621761642, 0)
+DracoMod.Size = UDim2.new(0, 82, 0, 38)
+DracoMod.Font = Enum.Font.SourceSansBold
+DracoMod.Text = "Draco's Mod Menu"
+DracoMod.TextColor3 = Color3.fromRGB(255, 255, 255)
+DracoMod.TextScaled = true
+DracoMod.TextSize = 14.000
+DracoMod.TextWrapped = true
+DracoMod.MouseButton1Down:Connect(function()
+	wait();
+	local UserInputService = game:GetService("UserInputService")
+	local ScreenGui = Instance.new("ScreenGui", game.CoreGui); ScreenGui.Name = "Drxco's Menu"
+	local Frame = Instance.new("Frame", ScreenGui)
+	local Main = Instance.new("ScrollingFrame", ScreenGui)
+	Main.Size = UDim2.new(0.3, 0, 0.4, 0)
+	Main.Position = UDim2.new(0.65, 0, 0.2, 0)
+	ScreenGui.Parent = nil
+	local MainEvent = game.ReplicatedStorage.MainEvent
+	local CurrentCamera = workspace.CurrentCamera
+	local Plr = game.Players.LocalPlayer
+	function enableGUI()
+		local v5 = 0
+		local players = game.Players:GetChildren()
+
+		table.sort(players, function(p1, p2)
+			return p1:GetFullName() < p2:GetFullName()
+		end)
+
+		local v7, v8, v9 = pairs(players)
+		while true do
+			local v10, Target = v7(v8, v9)
+			if not v10 then
+				break;
+			end;
+			v9 = v10;
+
+			local v12 = Instance.new("TextButton");
+			v12.Size = UDim2.new(0.25, 0, 0, 45);
+			v12.Position = UDim2.new(0, 0, 0, v5 * 50);
+			v12.BackgroundColor3 = BrickColor.Red().Color;
+			v12.Text = Target.Name;
+			v12.TextScaled = true;
+			v12.Parent = Main;
+
+			local View = v12:Clone();
+			View.Text = "Spectate"
+			View.Position = UDim2.new(0.75, 0, 0, v5 * 50);
+			View.Size = UDim2.new(0.25, 0, 0, 45);
+			View.BackgroundColor3 = BrickColor.White().Color;
+			View.Parent = Main;
+
+			local v14 = v12:Clone();
+			v14.Size = UDim2.new(0.25, 0, 0, 45);
+			v14.Position = UDim2.new(0.25, 0, 0, v5 * 50);
+			v14.BackgroundColor3 = BrickColor.Green().Color;
+			v14.Text = "UnBan";
+			v14.Parent = Main;
+
+			local v15 = Instance.new("TextBox");
+			v15.Size = UDim2.new(0.25, 0, 0, 45);
+			v15.Position = UDim2.new(0.5, 0, 0, v5 * 50);
+			v15.Text = "Ban/UnBan Note Here";
+			v15.Font = v12.Font;
+			v15.TextScaled = true;
+			v15.Parent = Main;
+
+			v5 = v5 + 1;
+			local u4 = false;
+			v12.MouseButton1Click:connect(function()
+				if u4 == false then
+					u4 = true;
+					MainEvent:FireServer("BANREMOTE", Target, v15.Text);
+					wait(0.5);
+					u4 = false;
+				end;
+			end);
+
+			v14.MouseButton1Click:connect(function()
+				MainEvent:FireServer("UNBANREMOTE", Target, v15.Text);
+			end);
+
+			View.MouseButton1Click:connect(function()
+				CurrentCamera.CameraSubject = Target.Character.Humanoid;
+			end);	
+		end;
+		Main.CanvasSize = UDim2.new(0, 0, 0, v5 * 50);
+		ScreenGui.Parent = game.CoreGui
+	end;
+
+	enableGUI()
+	--Frame.FindServer.MouseButton1Click:connect(function()
+	--	MainEvent:FireServer("FindServer", Frame.PlayerName.Text);
+	--end);
+	--Frame.JoinServer.MouseButton1Click:connect(function()
+	--	MainEvent:FireServer("JoinServer", Frame.ServerId.Text);
+	--end);
+	local u5 = false;
+	UserInputService.InputBegan:connect(function(p3, p4)
+		if not p4 and p3.UserInputType == Enum.UserInputType.Keyboard and p3.KeyCode == Enum.KeyCode.B and u5 == false then
+			u5 = true;
+			if ScreenGui.Parent == nil then
+				enableGUI();
+			else
+				ScreenGui.Parent = nil;
+				for v16, v17 in pairs(Main:GetChildren()) do
+					v17:Destroy();
+				end;
+			end;
+			wait(0.2);
+			u5 = false;
+		end;
+	end);
+	local v18 = {};
+	while wait() do
+		if ScreenGui.Parent == Plr.PlayerGui then
+			for v19 = #v18, 1, -1 do
+				v18[v19]:Destroy();
+				table.remove(v18, v19);
+			end;
+			for v20, v21 in pairs(game.Players:GetChildren()) do
+				pcall(function()
+					local l__Character__22 = v21.Character;
+					if CurrentCamera.CFrame.lookVector:Dot((l__Character__22.LowerTorso.Position - CurrentCamera.CFrame.p).unit) > 0 then
+						local v23 = CurrentCamera:WorldToScreenPoint(l__Character__22.UpperTorso.Position);
+						local v24 = Instance.new("TextLabel");
+						v24.Name = l__Character__22.Name;
+						local v25 = game.Players:GetPlayerFromCharacter(l__Character__22);
+						v24.Text = l__Character__22.Name;
+						v24.TextSize = 20;
+						v24.Font = Enum.Font.ArialBold;
+						v24.TextColor3 = (CurrentCamera.CFrame.p - l__Character__22.LowerTorso.Position).magnitude < 75 and Color3.fromRGB(137, 211, 205) or Color3.new(1, 0, 0);
+						v24.Position = UDim2.new(0, v23.x, 0, v23.y);
+						v24.Parent = ScreenGui;
+						table.insert(v18, v24);
+					end;
+				end);
+			end;
+		end;
+	end;
+end)
+
+Zoom.Name = "Zoom"
+Zoom.Parent = Page2Frame
+Zoom.BackgroundColor3 = Color3.fromRGB(55, 55, 55)
+Zoom.BorderSizePixel = 0
+Zoom.Position = UDim2.new(0.252212375, 0, 0.0621761642, 0)
+Zoom.Size = UDim2.new(0, 83, 0, 38)
+Zoom.Font = Enum.Font.SourceSansBold
+Zoom.Text = "Zoom"
+Zoom.TextColor3 = Color3.fromRGB(255, 255, 255)
+Zoom.TextScaled = true
+Zoom.TextSize = 14.000
+Zoom.TextWrapped = true
+Zoom.MouseButton1Down:Connect(function()
+	plr.CameraMaxZoomDistance = 99999999999
+	plr.CameraMinZoomDistance = 0
+end)
+
+AutoArrest.Name = "AutoArrest"
+AutoArrest.Parent = Page2Frame
+AutoArrest.BackgroundColor3 = Color3.fromRGB(55, 55, 55)
+AutoArrest.BorderSizePixel = 0
+AutoArrest.Position = UDim2.new(0.455752194, 0, 0.0621761642, 0)
+AutoArrest.Size = UDim2.new(0, 83, 0, 38)
+AutoArrest.Font = Enum.Font.SourceSansBold
+AutoArrest.Text = "AutoArrest"
+AutoArrest.TextColor3 = Color3.fromRGB(255, 255, 255)
+AutoArrest.TextScaled = true
+AutoArrest.TextSize = 14.000
+AutoArrest.TextWrapped = true
+AutoArrest.MouseButton1Down:Connect(function()
+	wait(0.5); if _G.AutoArrest == false or game.PlaceId ~= 2788229376 then return else repeat wait() until game.Players.LocalPlayer end
+
+	wait(15)
+	for i, v in next, game.Workspace:GetDescendants() do
+		if v:IsA("Seat") then
+			v:Destroy()
+		end
+	end
+	local Plr = game.Players.LocalPlayer
+
+	function serverhop()
+		print("PENIS")
+		Plr:Destroy()
+		local x = {}
+		for _, v in ipairs(game:GetService("HttpService"):JSONDecode(game:HttpGetAsync("https://games.roblox.com/v1/games/" .. game.PlaceId .. "/servers/Public?sortOrder=Asc&limit=100")).data) do
+			if type(v) == "table" and v.maxPlayers > v.playing and v.id ~= game.JobId then
+				x[#x + 1] = v.id
+			end
+		end
+		if #x > 0 then
+			game:GetService("TeleportService"):TeleportToPlaceInstance(game.PlaceId, x[math.random(1, #x)])
+		end
+	end
+
+	spawn(function()
+		wait(300)
+		serverhop()
+	end)
+
+	game:GetService("RunService").Stepped:connect(function()
+		Plr.Character.Humanoid:ChangeState(11)
+	end)
+	Plr.CharacterAdded:Connect(function(character)
+		repeat wait() until character:FindFirstChild("FULLY_LOADED_CHAR")
+		e(character)
+	end)
+	function e(character)
+		for i, v in pairs(game.Workspace.Ignored.ItemsDrop:GetChildren()) do
+			if v:FindFirstChild("[Knife]") and Plr.Character:FindFirstChild("[Knife]") == nil and Plr.Backpack:FindFirstChild("[Knife]") == nil then
+				Plr.Character.HumanoidRootPart.CFrame = v.CFrame
+				wait(1)
+			end
+		end
+		for i, v in pairs(character:GetChildren()) do
+			if v:FindFirstChild("LocalScript") then
+				v:Destroy()
+			end
+		end
+	end
+	e(Plr.character)
+	local target
+	while wait() do
+		target = nil
+		local highest = 0
+		for i, v in pairs(game.Players:GetPlayers()) do
+			if v:FindFirstChild("DataFolder") and v.Character:FindFirstChild("FULLY_LOADED_CHAR") and v.Character.BodyEffects:FindFirstChild("Defense") and tonumber(v.DataFolder.Information.Wanted.Value) > 500 and tonumber(v.DataFolder.Information.Wanted.Value) >= highest and v.Character.BodyEffects:FindFirstChild("Armor") then
+				target = v 
+				highest = tonumber(v.DataFolder.Information.Wanted.Value)
+			end
+		end
+		if not target then serverhop() end
+		local e = true
+		local penis = 0
+		local bagged = false
+		local A = false
+		spawn(function() pcall(function()
+				while bagged == false do
+					if target and target.Character and target.Character:FindFirstChild("Christmas_Sock") == nil and penis <= 5 and Plr.Character.Humanoid.Health > 80 then
+						if Plr.Backpack:FindFirstChild("[BrownBag]") == nil then
+							A = false
+							pcall(function()
+								repeat wait()
+									Plr.character.HumanoidRootPart.CFrame = CFrame.new(-316.034454, 48.2788467, -723.860474, 0.983254969, -0.000297372608, -0.182234928, 0.000218386791, 0.999999881, -0.000453495246, 0.182235047, 0.000406103791, 0.98325491)
+									fireclickdetector(game:GetService("Workspace").Ignored.Shop["[BrownBag] - $25"].ClickDetector)
+								until Plr.Backpack:FindFirstChild("[BrownBag]") ~= nil
+							end)
+							A = true
+						end
+						Plr.Character.Humanoid:EquipTool(Plr.Backpack["[BrownBag]"])
+						Plr.Character["[BrownBag]"]:Activate()
+						penis = penis + 1
+					elseif penis >= 2 or target.Character:FindFirstChild("Christmas_Sock") or not target then
+						bagged = true
+					end
+					wait(3)
+				end
+			end) end)
+		spawn(function()
+			while e do wait()
+				pcall(function()
+					if Plr.Character.Humanoid.Health > 80 then
+						if not target.Character.BodyEffects["K.O"].Value then
+							if A then
+								Plr.Character.HumanoidRootPart.CFrame = CFrame.new(target.Character.UpperTorso.Position + Vector3.new(0, -5, 0))
+							end
+						else
+							Plr.Character.HumanoidRootPart.CFrame = target.Character.UpperTorso.CFrame
+						end
+					else
+						Plr.Character.HumanoidRootPart.CFrame = CFrame.new(0, 999, 0)
+						if Plr.Character:FindFirstChild("[Chicken]") == nil or Plr.Backpack:FindFirstChild("[Chicken]") == nil then
+							Plr.Character.HumanoidRootPart.CFrame = game.Workspace.Ignored.Shop["[Chicken] - $7"].Head.CFrame
+							wait(0.5)
+							fireclickdetector(game.Workspace.Ignored.Shop["[Chicken] - $7"].ClickDetector)
+						end
+						pcall(function()Plr.Character.Humanoid:EquipTool(Plr.Backpack["[Chicken]"])end)
+						pcall(function()
+							Plr.Character["[Chicken]"]:Activate()
+							wait(0.1)
+							Plr.Character["[Chicken]"]:Deactivate()
+						end)
+					end
+				end)
+			end
+		end)
+		repeat wait() until bagged
+		pcall(function()
+			repeat wait()
+				repeat wait()
+					pcall(function()
+						if Plr.Character.Humanoid.Health > 80 then
+							pcall(function()Plr.Character.Humanoid:EquipTool(Plr.Backpack["[Knife]"])end)
+							wait(0.1)
+							Plr.Character["[Knife]"].GripPos = Vector3.new(0, 5, 0)
+							Plr.Character["[Knife]"].Handle.Size = Vector3.new(20, 20, 20)
+							Plr.Character["[Knife]"]:Activate()
+							wait(2)
+							Plr.Character["[Knife]"]:Deactivate()
+							wait(1)
+						end
+					end)
+				until not target or target.Character.BodyEffects["K.O"].Value or game:GetService("UserInputService"):IsKeyDown(Enum.KeyCode.V)
+				repeat wait() 
+					if Plr.Character.Humanoid.Health > 80 then
+						pcall(function()Plr.Character.Humanoid:EquipTool(Plr.Backpack.Cuff)end)
+						pcall(function()
+							Plr.Character.Cuff:Activate()
+							wait(0.1)
+							Plr.Character.Cuff:Deactivate()
+						end)
+					end
+				until not target.Character.BodyEffects["K.O"].Value or game:GetService("UserInputService"):IsKeyDown(Enum.KeyCode.V)
+			until tonumber(target.DataFolder.Information.Wanted.Value) == 0 or game:GetService("UserInputService"):IsKeyDown(Enum.KeyCode.V)
+		end)
+		e = false
+	end
+end)
+
+GodmodeV2.Name = "GodmodeV2"
+GodmodeV2.Parent = Page2Frame
+GodmodeV2.BackgroundColor3 = Color3.fromRGB(55, 55, 55)
+GodmodeV2.BorderSizePixel = 0
+GodmodeV2.Position = UDim2.new(0.676991105, 0, 0.0621761642, 0)
+GodmodeV2.Size = UDim2.new(0, 83, 0, 38)
+GodmodeV2.Font = Enum.Font.SourceSansBold
+GodmodeV2.Text = "Godmode V2"
+GodmodeV2.TextColor3 = Color3.fromRGB(255, 255, 255)
+GodmodeV2.TextScaled = true
+GodmodeV2.TextSize = 14.000
+GodmodeV2.TextWrapped = true
+GodmodeV2.MouseButton1Down:Connect(function()
+	local localPlayer = game:GetService('Players').LocalPlayer;
+	local localCharacter = localPlayer.Character;
+	localCharacter:FindFirstChildOfClass('Humanoid').Health = 0;
+	localCharacter:ClearAllChildren()
+	local newCharacter = localPlayer.CharacterAdded:Wait();
+	local spoofFolder = Instance.new('Folder');
+	spoofFolder.Name = 'FULLY_LOADED_CHAR';
+	spoofFolder.Parent = newCharacter;
+	newCharacter:WaitForChild('BodyEffects').Dead:Destroy();
+	local spoofValue = Instance.new('BoolValue', newCharacter.BodyEffects);
+	spoofValue.Name = 'Dead';
+end)
+
+FastRpg.Name = "FastRpg"
+FastRpg.Parent = Page2Frame
+FastRpg.BackgroundColor3 = Color3.fromRGB(55, 55, 55)
+FastRpg.BorderSizePixel = 0
+FastRpg.Position = UDim2.new(0.882743359, 0, 0.0621761642, 0)
+FastRpg.Size = UDim2.new(0, 73, 0, 38)
+FastRpg.Font = Enum.Font.SourceSansBold
+FastRpg.Text = "Fast Rpg"
+FastRpg.TextColor3 = Color3.fromRGB(255, 255, 255)
+FastRpg.TextScaled = true
+FastRpg.TextSize = 14.000
+FastRpg.TextWrapped = true
+FastRpg.MouseButton1Down:Connect(function()
+	-- SETTINGS --
+	local speed = 500 -- noob
+	--------------
+
+	local plr = game.Players.LocalPlayer
+
+	game.Workspace.Ignored.ChildAdded:connect(function(child)
+		wait()
+		if child.Name == "Launcher" and math.abs((child.Position-plr.Character.HumanoidRootPart.Position).Magnitude)<30 then
+			child:WaitForChild("BodyVelocity"):Destroy()
+			Instance.new("BodyVelocity", child).Velocity = (child.CFrame * CFrame.new(0, -speed, 0)).p - child.CFrame.p
+			while child and child.Parent ~= nil do
+				game.RunService.Stepped:wait()
+				setsimulationradius(math.huge^math.huge, math.huge)
+			end
+		end
+	end)
+end)
+
+MoneyEsp.Name = "MoneyEsp"
+MoneyEsp.Parent = Page2Frame
+MoneyEsp.BackgroundColor3 = Color3.fromRGB(55, 55, 55)
+MoneyEsp.BorderSizePixel = 0
+MoneyEsp.Position = UDim2.new(0.0442477874, 0, 0.39896372, 0)
+MoneyEsp.Size = UDim2.new(0, 82, 0, 38)
+MoneyEsp.Font = Enum.Font.SourceSansBold
+MoneyEsp.Text = "Money Esp"
+MoneyEsp.TextColor3 = Color3.fromRGB(255, 255, 255)
+MoneyEsp.TextScaled = true
+MoneyEsp.TextSize = 14.000
+MoneyEsp.TextWrapped = true
+MoneyEsp.MouseButton1Down:Connect(function()
+	local ESPholder = Instance.new("Folder", game.CoreGui)
+	function cham(object)
+		if object.Name == "MoneyDrop" then
+			local a = Instance.new("BoxHandleAdornment", ESPholder)
+			a.Adornee = object
+			a.AlwaysOnTop = true
+			a.ZIndex = 10
+			a.Size = object.Size
+			a.Transparency = 0.3
+			a.Color = object.BrickColor
+			local bill = object:WaitForChild("BillboardGui")
+			bill.AlwaysOnTop = true
+			bill.Size = UDim2.new(2, 10, 1, 5)
+			spawn(function()
+				while true do
+					if object.Parent.ChildRemoving:wait() == object then
+						a:Destroy()
+						break
+					end
+				end
+			end)
+		end
+	end
+	for i, v in next, game.Workspace.Ignored.Drop:GetChildren() do
+		cham(v)
+	end
+	game.Workspace.Ignored.Drop.ChildAdded:connect(cham)
+end)
+
+KnifeReach.Name = "KnifeReach"
+KnifeReach.Parent = Page2Frame
+KnifeReach.BackgroundColor3 = Color3.fromRGB(55, 55, 55)
+KnifeReach.BorderSizePixel = 0
+KnifeReach.Position = UDim2.new(0.252212375, 0, 0.39896372, 0)
+KnifeReach.Size = UDim2.new(0, 83, 0, 38)
+KnifeReach.Font = Enum.Font.SourceSansBold
+KnifeReach.Text = "Melee Reach"
+KnifeReach.TextColor3 = Color3.fromRGB(255, 255, 255)
+KnifeReach.TextScaled = true
+KnifeReach.TextSize = 14.000
+KnifeReach.TextWrapped = true
+KnifeReach.MouseButton1Down:Connect(function()
+	local Plr = game.Players.LocalPlayer
+	for i,v in pairs(Plr.Character:GetChildren()) do
+		if v:IsA("Tool") then
+			if v.Name ~= "Combat" then
+				local pp = v.Handle
+				v.TextureId = 0
+				if v.Name ~= "[SledgeHammer]" and v.Name ~= "[StopSign]" then
+					pp.MeshId = 0
+					pp.Transparency = 1
+				elseif v.Name == "[SledgeHammer]" then v.Part:Destroy() wait(0.1) v.Part:Destroy()
+				elseif v.Name == "[StopSign]" then v.Sign:Destroy() end
+
+				pp.Size = Vector3.new(50, 50, 50)
+				print(v)
+				Plr.Character.Humanoid:UnequipTools()
+				local tooloutline = Instance.new("SelectionBox",v.Handle)
+				tooloutline.Adornee = pp
+			else 
+				for i,v in ipairs(Plr.Character:GetDescendants()) do
+					if v:IsA("MeshPart") then v.Massless = true
+						v.CanCollide = false
+						v.CustomPhysicalProperties = PhysicalProperties.new(0, 0, 0, 0, 0)
+					end
+				end
+
+				for i,v in ipairs(game.workspace:GetDescendants()) do
+					if v:IsA("Seat") then 
+						v:Destroy()
+					end
+				end
+
+				Plr.Character.RightHand.Size = Vector3.new(35, 35, 35)
+				Plr.Character.RightHand.Transparency = 1
+
+				game:GetService('RunService').Stepped:connect(function()
+					if Plr.Character:FindFirstChild("Combat") and not Plr.Character.RightHand:FindFirstChild("ppsuc") then
+						local HandHitBox = Instance.new("SelectionBox",Plr.Character.RightHand)
+						HandHitBox.Adornee = Plr.Character.RightHand
+						HandHitBox.Name = "ppsuc"
+					elseif not Plr.Character:FindFirstChild("Combat") and Plr.Character.RightHand:FindFirstChild("ppsuc") then
+						Plr.Character.RightHand.ppsuc:Destroy()
+					end
+				end)
+			end
+		end
+	end
+end)
+
+PPStopsing.Name = "PPStopsing"
+PPStopsing.Parent = Page2Frame
+PPStopsing.BackgroundColor3 = Color3.fromRGB(55, 55, 55)
+PPStopsing.BorderSizePixel = 0
+PPStopsing.Position = UDim2.new(0.455752194, 0, 0.39896372, 0)
+PPStopsing.Size = UDim2.new(0, 83, 0, 38)
+PPStopsing.Font = Enum.Font.SourceSansBold
+PPStopsing.Text = "PP StopSing"
+PPStopsing.TextColor3 = Color3.fromRGB(255, 255, 255)
+PPStopsing.TextScaled = true
+PPStopsing.TextSize = 14.000
+PPStopsing.TextWrapped = true
+PPStopsing.MouseButton1Down:Connect(function()
+	local Plr = game.Players.LocalPlayer
+	local LastPos = Plr.Character.HumanoidRootPart.CFrame
+	local pp = Plr.Character["[StopSign]"]
+	wait(0.1)
+	pp.Sign:Destroy()
+	--pp.GripRight = Vector3.new(0, 0, 1)
+	--pp.GripForward = Vector3.new(1, 0, 0)
+	--pp.GripUp = Vector3.new(0, 1, 0)
+	--pp.GripPos = Vector3.new(-1, 2, 1.45)
+
+	pp.Grip = CFrame.new(-1, 2, 1.45000005, 0, -0, -1, -0, 1, -0, 1, 0, -0)
+end)
+
+Unjail.Name = "Unjail"
+Unjail.Parent = Page2Frame
+Unjail.BackgroundColor3 = Color3.fromRGB(55, 55, 55)
+Unjail.BorderSizePixel = 0
+Unjail.Position = UDim2.new(0.674778759, 0, 0.39896372, 0)
+Unjail.Size = UDim2.new(0, 84, 0, 38)
+Unjail.Font = Enum.Font.SourceSansBold
+Unjail.Text = "Unjail"
+Unjail.TextColor3 = Color3.fromRGB(255, 255, 255)
+Unjail.TextScaled = true
+Unjail.TextSize = 14.000
+Unjail.TextWrapped = true
+Unjail.MouseButton1Down:Connect(function()
+	local cor = coroutine.wrap(function()
+		game.Players.LocalPlayer.Character:MoveTo(Vector3.new(-270.063446, 21.75, -238.871841))
+	end)
+	cor()			
+	wait(1)
+	fireclickdetector(workspace.Ignored.Shop["[Key] - $125"].ClickDetector, 4)
+	wait(0.5)
+	game.Players.LocalPlayer.Backpack["[Key]"].Parent = game.Players.LocalPlayer.Character
+	wait(0.5)
+	game.Players.LocalPlayer.Character["[Key]"]:Activate()
+end)
+
+RpgControl.Name = "RpgControl"
+RpgControl.Parent = Page2Frame
+RpgControl.BackgroundColor3 = Color3.fromRGB(55, 55, 55)
+RpgControl.BorderSizePixel = 0
+RpgControl.Position = UDim2.new(0.882743359, 0, 0.39896372, 0)
+RpgControl.Size = UDim2.new(0, 73, 0, 38)
+RpgControl.Font = Enum.Font.SourceSansBold
+RpgControl.Text = "Rpg Control"
+RpgControl.TextColor3 = Color3.fromRGB(255, 255, 255)
+RpgControl.TextScaled = true
+RpgControl.TextSize = 14.000
+RpgControl.TextWrapped = true
+RpgControl.MouseButton1Down:Connect(function()
+	local Mouse = game.Players.LocalPlayer:GetMouse()
+	game.Workspace.Ignored.ChildAdded:connect(function(child)
+		if child.Name == "Handle" then
+			local b = Instance.new("BodyPosition", child)
+			b.MaxForce = Vector3.new(math.huge, math.huge, math.huge)
+			b.P = 1e5
+			while child and child.Parent ~= nil do
+				setsimulationradius(math.huge^math.huge, math.huge)
+				b.Position = Mouse.Hit.p
+				game.RunService.Stepped:wait()
+			end
+		end
+	end)
+end)
+
+BurgetShield.Name = "BurgetShield"
+BurgetShield.Parent = Page2Frame
+BurgetShield.BackgroundColor3 = Color3.fromRGB(55, 55, 55)
+BurgetShield.BorderSizePixel = 0
+BurgetShield.Position = UDim2.new(0.0442477874, 0, 0.699481845, 0)
+BurgetShield.Size = UDim2.new(0, 82, 0, 38)
+BurgetShield.Font = Enum.Font.SourceSansBold
+BurgetShield.Text = "Burger Shield"
+BurgetShield.TextColor3 = Color3.fromRGB(255, 255, 255)
+BurgetShield.TextScaled = true
+BurgetShield.TextSize = 14.000
+BurgetShield.TextWrapped = true
+BurgetShield.MouseButton1Down:Connect(function()
+	local Plr = game.Players.LocalPlayer
+	local e = 0
+	local p = 0
+	local burgercount = 3
+	local a = {}
+	local radian = math.pi/burgercount
+	repeat
+		Plr.Character.HumanoidRootPart.CFrame = game.Workspace.Ignored.Shop["[Hamburger] - $5"].Head.CFrame
+		wait(0.5)
+		fireclickdetector(game:GetService("Workspace").Ignored.Shop["[Hamburger] - $5"].ClickDetector)
+		for i, v in pairs(Plr.Backpack:GetChildren()) do
+			if v.Name == "[Hamburger]" then
+				e = 0
+				for i, v in pairs(a) do
+					e = e + 1
+				end
+				table.insert(a, v)
+				v.Parent = Plr.Character
+			end
+		end
+	until e >= burgercount*9
+	spawn(function()
+		while wait() do
+			e = e + 0.01
+			if e >= 1 then
+				e = -1
+			end
+		end
+	end)
+	for i, v in pairs(a) do
+		spawn(function()
+			while wait() do
+				p = 2*(e*math.pi-(radian*i))
+				if i <=math.floor(1*burgercount) then
+					v.GripPos = Vector3.new(math.sin(p)*5, 0, math.cos(p)*5)
+				elseif i <=2*burgercount then
+					v.GripPos = Vector3.new(math.sin(p)*5, math.cos(p)*5, 0)
+				elseif i <=3*burgercount then
+					v.GripPos = Vector3.new(0, math.cos(p)*5, math.sin(p)*5)
+				elseif i <=4*burgercount then
+					v.GripPos = Vector3.new(math.cos(p)*5, math.sin(p)*5, math.cos(p)*5)
+				elseif i <=5*burgercount then
+					v.GripPos = Vector3.new(math.cos(p)*5, math.sin(p)*5, -math.cos(p)*5)
+				elseif i <=6*burgercount then
+					v.GripPos = Vector3.new(math.sin(p)*5, math.cos(p)*5, math.cos(p)*5)
+				elseif i <=7*burgercount then
+					v.GripPos = Vector3.new(math.sin(p)*5, math.cos(p)*5, -math.cos(p)*5)
+				elseif i <=8*burgercount then
+					v.GripPos = Vector3.new(math.cos(p)*5, math.cos(p)*5, math.sin(p)*5)
+				elseif i <=9*burgercount then
+					v.GripPos = Vector3.new(math.cos(p)*5, math.cos(p)*5, math.sin(p)*5)
+				end
+			end
+		end)
+	end
+	Plr.Character.Humanoid:UnequipTools()
+	wait(5)
+	for _, burger in pairs(a) do
+		burger.Parent = Plr.Character
+	end
+end)
+
+Headless.Name = "Headless"
+Headless.Parent = Page2Frame
+Headless.BackgroundColor3 = Color3.fromRGB(55, 55, 55)
+Headless.BorderSizePixel = 0
+Headless.Position = UDim2.new(0.252212375, 0, 0.699481845, 0)
+Headless.Size = UDim2.new(0, 83, 0, 38)
+Headless.Font = Enum.Font.SourceSansBold
+Headless.Text = "Headless"
+Headless.TextColor3 = Color3.fromRGB(255, 255, 255)
+Headless.TextScaled = true
+Headless.TextSize = 14.000
+Headless.TextWrapped = true
+Headless.MouseButton1Down:Connect(function()
+	local HeadPos = game.Players.LocalPlayer.Character.Head.Position.Y - game.Players.LocalPlayer.Character.HumanoidRootPart.Position.Y
+	local Plr = game.Players.LocalPlayer
+	mouse = Plr:GetMouse()
+	mouse.KeyDown:connect(function(key)
+		if key == "t" then
+			if cock then cock = false 
+				Plr.Character.Head.Position = Plr.Character.Head.Position + Vector3.new(0, math.huge, 0)
+			else cock = true 
+				Plr.Character.Head.Position = Plr.Character.HumanoidRootPart.Position.Y + HeadPos
+			end
+		end
+	end)
+end)
+
+FlyBypass.Name = "FlyBypass"
+FlyBypass.Parent = Page2Frame
+FlyBypass.BackgroundColor3 = Color3.fromRGB(55, 55, 55)
+FlyBypass.BorderSizePixel = 0
+FlyBypass.Position = UDim2.new(0.455752194, 0, 0.699481845, 0)
+FlyBypass.Size = UDim2.new(0, 83, 0, 38)
+FlyBypass.Font = Enum.Font.SourceSansBold
+FlyBypass.Text = "Fly Bypass"
+FlyBypass.TextColor3 = Color3.fromRGB(255, 255, 255)
+FlyBypass.TextScaled = true
+FlyBypass.TextSize = 14.000
+FlyBypass.TextWrapped = true
+FlyBypass.MouseButton1Down:Connect(function()
+	loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
+
+	local mt = getrawmetatable(game)
+	local old = mt.__newindex
+	local Plr = game.Players.LocalPlayer
+	local bad, otherbad = {"BodyPosition", "BodyVelocity", "BodyGyro"}, {"HumanoidRootPart", "UpperTorso"}
+	setreadonly(mt, false)
+	local oldie
+	oldie = hookfunc(Instance.new, newcclosure(function(e, i, ...) 
+		if i and table.find(bad, e) and table.find(otherbad, tostring(i)) and i.Parent == Plr.Character then
+			print("reparented")
+			return oldie(e, Plr.Character.LowerTorso, ...)
+		end
+		return oldie(e, i, ...)
+	end))
+	mt.__newindex = newcclosure(function(t, i, v)
+		if Plr.Character and table.find(bad, t.ClassName) and i == "Parent" and (table.find(otherbad, tostring(v)) and v.Parent == Plr.Character) then
+			print("reparented")
+			return old(t, i, Plr.Character.LowerTorso)
+		end
+		return old(t, i, v)
+	end)
+	setreadonly(mt, true)
+end)
+
+BuyArmor.Name = "BuyArmor"
+BuyArmor.Parent = Page2Frame
+BuyArmor.BackgroundColor3 = Color3.fromRGB(55, 55, 55)
+BuyArmor.BorderSizePixel = 0
+BuyArmor.Position = UDim2.new(0.674778759, 0, 0.699481845, 0)
+BuyArmor.Size = UDim2.new(0, 84, 0, 38)
+BuyArmor.Font = Enum.Font.SourceSansBold
+BuyArmor.Text = "Buy Armor"
+BuyArmor.TextColor3 = Color3.fromRGB(255, 255, 255)
+BuyArmor.TextScaled = true
+BuyArmor.TextSize = 14.000
+BuyArmor.TextWrapped = true
+BuyArmor.MouseButton1Down:Connect(function()
+	local savedarmourpos = plr.Character.HumanoidRootPart.Position
+	plr.Character.HumanoidRootPart.CFrame = CFrame.new(-607.871, 10.22, -786.25)
+	wait(.1)
+	fireclickdetector(game.Workspace.Ignored.Shop['[Medium Armor] - $1000'].ClickDetector)
+	fireclickdetector(game.Workspace.Ignored.Shop['[Medium Armor] - $1000'].ClickDetector)
+	plr.Character.HumanoidRootPart.CFrame = CFrame.new(savedarmourpos)
+	plr.Character.HumanoidRootPart.CFrame = CFrame.new(savedarmourpos)
+end)
+
+Autofarm.Name = "Autofarm"
+Autofarm.Parent = Page2Frame
+Autofarm.BackgroundColor3 = Color3.fromRGB(55, 55, 55)
+Autofarm.BorderSizePixel = 0
+Autofarm.Position = UDim2.new(0.882743359, 0, 0.699481845, 0)
+Autofarm.Size = UDim2.new(0, 73, 0, 38)
+Autofarm.Font = Enum.Font.SourceSansBold
+Autofarm.Text = "Fist Autofarm"
+Autofarm.TextColor3 = Color3.fromRGB(255, 255, 255)
+Autofarm.TextScaled = true
+Autofarm.TextSize = 14.000
+Autofarm.TextWrapped = true
+Autofarm.MouseButton1Down:Connect(function()
+	local plr = game.Players.LocalPlayer
+	repeat wait() until plr.Character:FindFirstChild("FULLY_LOADED_CHAR")
+	--SEAT DESTRUCTIONNNNN
+	for i,v in pairs(game.Workspace:GetDescendants()) do
+		if v:IsA("Seat") then
+			v:Destroy()
+		end
+	end
+	--anti tp anticheat
+	function DeleteAntiCheat()
+		for i,v in pairs(plr.Character:GetChildren()) do
+			if v.ClassName == "Script" and v.Name ~= "Health" then
+				v:Destroy()
+			end
+		end
+	end
+
+	plr.CharacterAdded:Connect(function(character)
+		repeat wait() until game.Players.LocalPlayer and game.Players.LocalPlayer.Character and game.Players.LocalPlayer.Character:findFirstChild("FULLY_LOADED_CHAR")
+		DeleteAntiCheat()
+		wait(1)
+		reset = false
+	end)
+	DeleteAntiCheat()
+	--respawn
+	local reset = false
+	spawn(function()
+		while wait() do
+			pcall(function()if plr.Character.Humanoid.Health <= 0 then reset = true end end)
+		end
+	end)
+	--antiafk
+	game:GetService("Players").LocalPlayer.Idled:connect(function()
+		game:GetService("VirtualUser"):Button2Down(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
+		wait(1)
+		game:GetService("VirtualUser"):Button2Up(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
+	end)
+	--network ownership
+	game:GetService('RunService').Stepped:connect(function()
+		pcall(function()plr.Character.Humanoid:ChangeState(11)end)
+		setsimulationradius(math.huge)
+	end)
+
+	while wait(0.5) do
+		for i,v in pairs(game.Workspace.Cashiers:GetChildren()) do
+			if v.Humanoid.Health > 0 then
+				spawn(function()
+					while v.Humanoid.Health > 0 do
+						wait()
+						pcall(function()plr.Character.HumanoidRootPart.CFrame = v.Head.CFrame * CFrame.new(0, -2, 1.5)end)
+					end
+				end)
+				repeat
+					pcall(function()plr.Character.Humanoid:EquipTool(plr.Backpack.Combat)end)
+					wait(0.1)
+					pcall(function()
+						plr.Character.Combat:Activate()
+						wait(2)
+						plr.Character.Combat:Deactivate()
+						wait(1)
+					end)
+				until v.Humanoid.Health <= 0
+				wait(0.1)
+
+				for ii,vv in pairs(game.Workspace.Ignored.Drop:GetChildren()) do
+					if vv.Name ~= "MoneyDrop" then continue end
+					if (plr.Character.HumanoidRootPart.Position - vv.Position).Magnitude > 25 then continue end
+					vv.Name = "Grabbing"
+					vv.Anchored = true
+					while game.Workspace.Ignored.Drop:FindFirstChild("Grabbing") do
+						wait()
+						pcall(function()
+							plr.character.HumanoidRootPart.CFrame = vv.CFrame
+							if not reset then fireclickdetector(vv.ClickDetector) end
+						end)
+					end
+				end
+			end
+		end
+	end
+end)
+
+Page3Frame.Name = "Page3Frame"
+Page3Frame.Parent = Frame
+Page3Frame.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+Page3Frame.BorderSizePixel = 0
+Page3Frame.Position = UDim2.new(0.0712871253, 0, 0.346504569, 0)
+Page3Frame.Size = UDim2.new(0, 439, 0, 186)
+Page3Frame.Visible = false
+
+AimlockV2.Name = "AimlockV2"
+AimlockV2.Parent = Page3Frame
+AimlockV2.BackgroundColor3 = Color3.fromRGB(55, 55, 55)
+AimlockV2.BorderSizePixel = 0
+AimlockV2.Position = UDim2.new(0.050113894, 0, 0, 0)
+AimlockV2.Size = UDim2.new(0, 80, 0, 31)
+AimlockV2.Font = Enum.Font.SourceSansBold
+AimlockV2.Text = "Aimlock V2 [Right Click]"
+AimlockV2.TextColor3 = Color3.fromRGB(255, 255, 255)
+AimlockV2.TextScaled = true
+AimlockV2.TextSize = 14.000
+AimlockV2.TextWrapped = true
+AimlockV2.MouseButton1Down:Connect(function()
+	local CC = game:GetService'Workspace'.CurrentCamera
+	local Plr
+	local enabled = false
+	local accomidationfactor = 0.165
+	local mouse = game.Players.LocalPlayer:GetMouse()
+	local placemarker = Instance.new("Part", game.Workspace)
+	local guimain = Instance.new("Folder", game.CoreGui)
+
+	function makemarker(Parent, Adornee, Color, Size, Size2)
+		local e = Instance.new("BillboardGui", Parent)
+		e.Name = "PP"
+		e.Adornee = Adornee
+		e.Size = UDim2.new(Size, Size2, Size, Size2)
+		e.AlwaysOnTop = true
+		local a = Instance.new("Frame", e)
+		a.Size = UDim2.new(1, 0, 1, 0)
+		a.BackgroundTransparency = 0.4
+		a.BackgroundColor3 = Color
+		local g = Instance.new("UICorner", a)
+		g.CornerRadius = UDim.new(50, 50)
+		return(e)
+	end
+
+	local data = game.Players:GetPlayers()
+	function noob(player)
+		local character
+		repeat wait() until player.Character
+		local handler = makemarker(guimain, player.Character:WaitForChild("Head"), Color3.fromRGB(255, 255, 255), 0.3, 3)
+		handler.Name = player.Name
+		player.CharacterAdded:connect(function(Char) handler.Adornee = Char:WaitForChild("Head") end)
+
+		local TextLabel = Instance.new("TextLabel", handler)
+		TextLabel.BackgroundTransparency = 1
+		TextLabel.Position = UDim2.new(0, 0, 0, -50)
+		TextLabel.Size = UDim2.new(0, 100, 0, 100)
+		TextLabel.Font = Enum.Font.SourceSansSemibold
+		TextLabel.TextSize = 14
+		TextLabel.TextColor3 = Color3.new(1, 1, 1)
+		TextLabel.TextStrokeTransparency = 0
+		TextLabel.TextYAlignment = Enum.TextYAlignment.Bottom
+		TextLabel.Text = 'Name: '..player.Name
+		TextLabel.ZIndex = 10
+
+		spawn(function()
+			while wait() do
+				if player.Character then
+					TextLabel.Text = player.Name.." | Bounty: "..tostring(player:WaitForChild("leaderstats").Wanted.Value).." | "..tostring(math.floor(player.Character:WaitForChild("Humanoid").Health))
+				end
+			end
+		end)
+	end
+
+	for i = 1, #data do
+		if data[i] ~= game.Players.LocalPlayer then
+			noob(data[i])
+		end
+	end
+
+	game.Players.PlayerAdded:connect(function(Player)
+		noob(Player)
+	end)
+
+	spawn(function()
+		placemarker.Anchored = true
+		placemarker.CanCollide = false
+		placemarker.Size = Vector3.new(0.1, 0.1, 0.1)
+		placemarker.Transparency = 1
+		makemarker(placemarker, placemarker, Color3.fromRGB(0, 0, 255), 0.15, 0)
+	end)    
+
+	local UserInputService = game:GetService'UserInputService'
+
+	UserInputService.InputBegan:Connect(function(input)
+		if input.UserInputType == Enum.UserInputType.MouseButton2 then
+			enabled = true 
+			Plr = getClosestPlayerToCursor()
+			guimain[Plr.Name].Frame.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+		end
+	end)
+
+	UserInputService.InputEnded:Connect(function(input)
+		if input.UserInputType == Enum.UserInputType.MouseButton2 then
+			enabled = false
+			guimain[Plr.Name].Frame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+		end
+	end)
+
+	function getClosestPlayerToCursor()
+		local closestPlayer
+		local shortestDistance = math.huge
+
+		for i, v in pairs(game.Players:GetPlayers()) do
+			if v ~= game.Players.LocalPlayer and v.Character and v.Character:FindFirstChild("Humanoid") and v.Character.Humanoid.Health ~= 0 and v.Character:FindFirstChild("Head") then
+				local pos = CC:WorldToViewportPoint(v.Character.PrimaryPart.Position)
+				local magnitude = (Vector2.new(pos.X, pos.Y) - Vector2.new(mouse.X, mouse.Y)).magnitude
+				if magnitude < shortestDistance then
+					closestPlayer = v
+					shortestDistance = magnitude
+				end
+			end
+		end
+		return closestPlayer
+	end
+
+	game:GetService'RunService'.Stepped:connect(function()
+		if enabled and Plr.Character and Plr.Character:FindFirstChild("Head") then
+			placemarker.CFrame = CFrame.new(Plr.Character.Head.Position+(Plr.Character.Head.Velocity*accomidationfactor))
+		else
+			placemarker.CFrame = CFrame.new(0, 9999, 0)
+		end
+	end)
+
+	local mt = getrawmetatable(game)
+	local old = mt.__namecall
+	setreadonly(mt, false)
+	mt.__namecall = newcclosure(function(...)
+		local args = {...}
+		if enabled and getnamecallmethod() == "FireServer" and args[2] == "UpdateMousePos" then
+			args[3] = Plr.Character.Head.Position+(Plr.Character.Head.Velocity*accomidationfactor)
+			return old(unpack(args))
+		end
+		return old(...)
+	end)
+end)
+
+Btools.Name = "Btools"
+Btools.Parent = Page3Frame
+Btools.BackgroundColor3 = Color3.fromRGB(55, 55, 55)
+Btools.BorderSizePixel = 0
+Btools.Position = UDim2.new(0.257403195, 0, 0, 0)
+Btools.Size = UDim2.new(0, 80, 0, 31)
+Btools.Font = Enum.Font.SourceSansBold
+Btools.Text = "Btools"
+Btools.TextColor3 = Color3.fromRGB(255, 255, 255)
+Btools.TextScaled = true
+Btools.TextSize = 14.000
+Btools.TextWrapped = true
+Btools.MouseButton1Down:Connect(function()
+	local tool1 = Instance.new("HopperBin",game.Players.LocalPlayer.Backpack)
+	local tool2 = Instance.new("HopperBin",game.Players.LocalPlayer.Backpack)
+	local tool3 = Instance.new("HopperBin",game.Players.LocalPlayer.Backpack)
+	local tool4 = Instance.new("HopperBin",game.Players.LocalPlayer.Backpack)
+	local tool5 = Instance.new("HopperBin",game.Players.LocalPlayer.Backpack)
+	tool1.BinType = "Clone"
+	tool2.BinType = "GameTool"
+	tool3.BinType = "Hammer"
+	tool4.BinType = "Script"
+	tool5.BinType = "Grab"
+end)
+
+SavePos.Name = "SavePos"
+SavePos.Parent = Page3Frame
+SavePos.BackgroundColor3 = Color3.fromRGB(55, 55, 55)
+SavePos.BorderSizePixel = 0
+SavePos.Position = UDim2.new(0.462414563, 0, 0, 0)
+SavePos.Size = UDim2.new(0, 80, 0, 31)
+SavePos.Font = Enum.Font.SourceSansBold
+SavePos.Text = "SavePos"
+SavePos.TextColor3 = Color3.fromRGB(255, 255, 255)
+SavePos.TextScaled = true
+SavePos.TextSize = 14.000
+SavePos.TextWrapped = true
+SavePos.MouseButton1Down:Connect(function()
+	plr = game:GetService('Players').LocalPlayer
+	script.Parent.Parent.Save_Pos.MouseButton1Click:Connect(function()
+		X1 = plr.Character:FindFirstChild('HumanoidRootPart').CFrame.X
+		Y1 = plr.Character:FindFirstChild('HumanoidRootPart').CFrame.Y
+		Z1 = plr.Character:FindFirstChild('HumanoidRootPart').CFrame.Z
+	end)
+	script.Parent.Parent.Load_Pos.MouseButton1Click:Connect(function()
+		plr.Character.HumanoidRootPart.CFrame = CFrame.new(X1,Y1+5,Z1)
+	end)
+end)
+
+PPKnife.Name = "PPKnife"
+PPKnife.Parent = Page3Frame
+PPKnife.BackgroundColor3 = Color3.fromRGB(55, 55, 55)
+PPKnife.BorderSizePixel = 0
+PPKnife.Position = UDim2.new(0.66514802, 0, 0, 0)
+PPKnife.Size = UDim2.new(0, 80, 0, 31)
+PPKnife.Font = Enum.Font.SourceSansBold
+PPKnife.Text = "PP Knife"
+PPKnife.TextColor3 = Color3.fromRGB(255, 255, 255)
+PPKnife.TextScaled = true
+PPKnife.TextSize = 14.000
+PPKnife.TextWrapped = true
+PPKnife.MouseButton1Down:Connect(function()
+	local Plr = game.Players.LocalPlayer
+	local LastPos = Plr.Character.HumanoidRootPart.CFrame
+	wait(0.1)
+	if Plr.Character:FindFirstChild("[Knife]") or Plr.Backpack:FindFirstChild("[Knife]") then
+		Plr.Character.Humanoid:UnequipTools()
+		wait(0.1)
+		Plr.Character.Humanoid:EquipTool(Plr.Backpack["[Knife]"])
+		Plr.Character.HumanoidRootPart.CFrame = CFrame.new(803.5, 48, -547, 0, 0, -1, 0, 1, 0, 1, 0, 0)
+		Plr.Character["[Knife]"].Handle.Orientation = Vector3.new(0, 180, 0)
+		wait(0.2)
+		Plr.Character["[Knife]"].Handle.Position = Vector3.new(804.3, 47, -547)
+		Plr.Character.HumanoidRootPart.CFrame = LastPos
+	end
+end)
+
+Annoymus.Name = "Annoymus"
+Annoymus.Parent = Page3Frame
+Annoymus.BackgroundColor3 = Color3.fromRGB(55, 55, 55)
+Annoymus.BorderSizePixel = 0
+Annoymus.Position = UDim2.new(0.0501138605, 0, 0.306451619, 0)
+Annoymus.Size = UDim2.new(0, 80, 0, 31)
+Annoymus.Font = Enum.Font.SourceSansBold
+Annoymus.Text = "Annoymus"
+Annoymus.TextColor3 = Color3.fromRGB(255, 255, 255)
+Annoymus.TextScaled = true
+Annoymus.TextSize = 14.000
+Annoymus.TextWrapped = true
+Annoymus.MouseButton1Down:Connect(function()
+	while wait(0.20) do
+		game.Players.LocalPlayer.Character.BodyEffects.Movement.ChildAdded:Connect(function(child)
+			wait()
+			child:Destroy()
+		end)
+	end
+end)
+
+SplitG.Name = "SplitG"
+SplitG.Parent = Page3Frame
+SplitG.BackgroundColor3 = Color3.fromRGB(55, 55, 55)
+SplitG.BorderSizePixel = 0
+SplitG.Position = UDim2.new(0.257403165, 0, 0.306451619, 0)
+SplitG.Size = UDim2.new(0, 80, 0, 31)
+SplitG.Font = Enum.Font.SourceSansBold
+SplitG.Text = "SplitGrande"
+SplitG.TextColor3 = Color3.fromRGB(255, 255, 255)
+SplitG.TextScaled = true
+SplitG.TextSize = 14.000
+SplitG.TextWrapped = true
+SplitG.MouseButton1Down:Connect(function()
+	if not game.Players.LocalPlayer.Backpack:FindFirstChild("[Grenade]") then
+		game.StarterGui:SetCore("SendNotification", {
+			Title = "DaHoodHub";
+			Text = "Buy at least 5-20 Grenades";
+			Duration = 15;
+		})
+	end
+
+
+	if game.Players.LocalPlayer.Backpack:FindFirstChild("[Grenade]") then
+		local LocalPlayer = game:GetService("Players").LocalPlayer
+		local char = LocalPlayer.Character
+		local Ignored = game.workspace.Ignored
+		local backpack = LocalPlayer.Backpack
+		local x = 0
+		local Grenade = "[Grenade]"
+		local DroppedGrenade = "Handle"
+
+		for i,v in pairs(backpack:GetChildren()) do
+			if v.Name == Grenade then
+				v.Parent = char
+			end
+		end
+		for i,v in pairs(char:GetChildren()) do
+			if v.Name == Grenade then
+				v:Activate()
+				v:Activate()
+			end
+		end
+	end
+end)
+
+HollyCross.Name = "HollyCross"
+HollyCross.Parent = Page3Frame
+HollyCross.BackgroundColor3 = Color3.fromRGB(55, 55, 55)
+HollyCross.BorderSizePixel = 0
+HollyCross.Position = UDim2.new(0.462414563, 0, 0.306451619, 0)
+HollyCross.Size = UDim2.new(0, 80, 0, 31)
+HollyCross.Font = Enum.Font.SourceSansBold
+HollyCross.Text = "HollyCross"
+HollyCross.TextColor3 = Color3.fromRGB(255, 255, 255)
+HollyCross.TextScaled = true
+HollyCross.TextSize = 14.000
+HollyCross.TextWrapped = true
+HollyCross.MouseButton1Down:Connect(function()
+	pcall(function()
+		for i,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
+			if v.Name == '[SledgeHammer]' then
+				v.Parent = game.Players.LocalPlayer.Character
+			end
+		end
+	end)
+	wait(.9)
+	local targetpos = CFrame.new(-899.925659, 21.75, -297.100342)
+	local plr = game.Players.LocalPlayer
+	local pos = plr.Character.HumanoidRootPart.Position
+	if not game.Players.LocalPlayer.Character:FindFirstChild("[SledgeHammer]") then
+		plr.Character.HumanoidRootPart.CFrame = targetpos
+		local cd = game:GetService("Workspace").Ignored.Shop["[SledgeHammer] - $350"]:FindFirstChild("ClickDetector")
+		wait(.9)
+		fireclickdetector(cd)
+		wait(.4)
+		game.Players.LocalPlayer.Backpack:FindFirstChild("[SledgeHammer]").Parent = plr.Character
+		wait(.9)
+		fireclickdetector(cd)
+		wait(.4)
+		game.Players.LocalPlayer.Backpack:FindFirstChild("[SledgeHammer]").Parent = plr.Character
+		for i,v in pairs(plr.Character:GetChildren()) do
+			if v.Name == '[SledgeHammer]' then
+				v:GetChildren()[3]:Destroy()
+			end
+		end
+		local sd = plr.Character:FindFirstChild("[SledgeHammer]")
+		sd.Grip = CFrame.new(-2.4000001, -0.699999988, 0, 0, 1, -0, -1, 0, -0, 0, 0, 1)
+		sd.GripForward = Vector3.new(0, 0, -1)
+		sd.GripPos = Vector3.new(-2.4, -0.7, 0)
+		sd.GripUp = Vector3.new(1, 0, 0)
+		plr.Character.HumanoidRootPart.CFrame = CFrame.new(pos)
+	end
+	local sd = plr.Character:FindFirstChild("[SledgeHammer]")
+	sd.Grip = CFrame.new(-2.4000001, -0.699999988, 0, 0, 1, -0, -1, 0, -0, 0, 0, 1)
+	sd.GripForward = Vector3.new(0, 0, -1)
+	sd.GripPos = Vector3.new(-2.4, -0.7, 0)
+	sd.GripUp = Vector3.new(1, 0, 0)
+	plr.Character.HumanoidRootPart.CFrame = CFrame.new(pos)
+end)
+
+SilentAim.Name = "SilentAim"
+SilentAim.Parent = Page3Frame
+SilentAim.BackgroundColor3 = Color3.fromRGB(55, 55, 55)
+SilentAim.BorderSizePixel = 0
+SilentAim.Position = UDim2.new(0.66514802, 0, 0.306451619, 0)
+SilentAim.Size = UDim2.new(0, 80, 0, 31)
+SilentAim.Font = Enum.Font.SourceSansBold
+SilentAim.Text = "Silent Aim"
+SilentAim.TextColor3 = Color3.fromRGB(255, 255, 255)
+SilentAim.TextScaled = true
+SilentAim.TextSize = 14.000
+SilentAim.TextWrapped = true
+SilentAim.MouseButton1Down:Connect(function()
+	-- // Index Version // --
+	local mt = getrawmetatable(game)
+	local backupindex = mt.__index
+	local ValiantAimHacks = loadstring(game:HttpGetAsync("https://gist.githubusercontent.com/pixelheadx/fff108da96922e834036a6619ce07ff0/raw/cf8bc54198875dbef85a2b9711583cbd05e4d69a/gistfile1.txt"))()
+	ValiantAimHacks["TeamCheck"] = false
+	setreadonly(mt, false)
+
+	mt.__index = newcclosure(function(t, k)
+		if t:IsA("Mouse") and (k == "Hit" or k == "Target") then
+			if ValiantAimHacks.checkSilentAim() then
+				local CPlayer = rawget(ValiantAimHacks, "Selected")
+				if CPlayer and CPlayer.Character and CPlayer.Character.FindFirstChild(CPlayer.Character, "Head") then
+					return (k == "Hit" and CPlayer.Character.Head.CFrame or CPlayer.Character.Head)
+				end
+			end
+		end
+		return backupindex(t, k)
+	end)
+	setreadonly(mt, true)
+end)
+
+AimlockTool.Name = "AimlockTool"
+AimlockTool.Parent = Page3Frame
+AimlockTool.BackgroundColor3 = Color3.fromRGB(55, 55, 55)
+AimlockTool.BorderSizePixel = 0
+AimlockTool.Position = UDim2.new(0.0501138605, 0, 0.569892466, 0)
+AimlockTool.Size = UDim2.new(0, 80, 0, 31)
+AimlockTool.Font = Enum.Font.SourceSansBold
+AimlockTool.Text = "Aimlock Gui"
+AimlockTool.TextColor3 = Color3.fromRGB(255, 255, 255)
+AimlockTool.TextScaled = true
+AimlockTool.TextSize = 14.000
+AimlockTool.TextWrapped = true
+AimlockTool.MouseButton1Down:Connect(function()
+	--// Clone Detection
+	for i, v in pairs(game:GetService("CoreGui"):GetChildren()) do
+		if v.Name == "ScreenGui" then
+			v:Destroy()
+		end
+	end
+
+	repeat
+		wait()
+	until game:GetService("Players").LocalPlayer ~= nil
+
+	if not game:GetService("Players").LocalPlayer.Character then
+		game:GetService("Players").LocalPlayer.CharacterAdded:Wait()
+	end
+
+
+
+	--/ Variables & Da Hood Gui Clones Deletion
+
+	local LocalPlayer = game:GetService("Players").LocalPlayer
+	local Character = LocalPlayer.Character
+	local Workspace = game:GetService("Workspace")
+	local CoreGui = game:GetService("CoreGui")
+
+	local LockedPlayer = nil
+	local Aimlock = nil
+
+	for i, v in pairs(game:GetService("CoreGui"):GetChildren()) do
+		if v.Name == "dhgui" then
+			v:Destroy()
+		end
+	end
+
+	local mt = getrawmetatable(game)
+	local namecall = mt.__namecall
+	setreadonly(mt, false)
+
+	if getrawmetatable then
+		local mt = getrawmetatable(game)
+		local namecall = mt.__namecall
+		setreadonly(mt, false)
+
+		mt.__namecall = newcclosure(function(table, ...)
+			local args = {...}
+			local method = getnamecallmethod()
+			if method == "FireServer" and args[1] and args[1] == "UpdateMousePos" then
+				if not (args[3] and args[3] == "Aimlock") then
+					return nil
+				end
+			end
+			return namecall(table, ...)
+		end) 
+	end
+
+	local function FindPlrOnMouse()
+		for i, v in pairs(game.Workspace:FindPartsInRegion3(Region3.new(LocalPlayer:GetMouse().Hit.Position, LocalPlayer:GetMouse().Hit.Position))) do
+			local plr = game.Players:GetPlayerFromCharacter(v.Parent)
+			if plr ~= nil and plr ~= LocalPlayer then
+				return plr
+			end
+		end
+		return nil
+	end
+
+	-- // Gui
+	local ScreenGui = Instance.new("ScreenGui")
+	local Frame = Instance.new("Frame")
+	local TextButton = Instance.new("TextButton")
+	local TextButton_2 = Instance.new("TextButton")
+	local TextBox = Instance.new("TextBox")
+
+
+	--// Gui Making
+
+	ScreenGui.Parent = game.CoreGui
+	ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+	Frame.Parent = ScreenGui
+	Frame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	Frame.Position = UDim2.new(0.30297032, 0, 0.475625843, 0)
+	Frame.Size = UDim2.new(0, 397, 0, 211)
+	Frame.Active = true
+	Frame.Draggable = true
+
+
+
+	TextButton.Parent = Frame
+	TextButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	TextButton.Position = UDim2.new(0.0554156154, 0, 0.60189575, 0)
+	TextButton.Size = UDim2.new(0, 136, 0, 50)
+	TextButton.Font = Enum.Font.Cartoon
+	TextButton.Text = "Aimlock Tool"
+	TextButton.TextColor3 = Color3.fromRGB(0, 0, 0)
+	TextButton.TextSize = 14.000
+
+
+	TextButton_2.Parent = Frame
+	TextButton_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	TextButton_2.Position = UDim2.new(0.570553482, 0, 0.60189575, 0)
+	TextButton_2.Size = UDim2.new(0, 136, 0, 50)
+	TextButton_2.Font = Enum.Font.Cartoon
+	TextButton_2.Text = ""
+	TextButton_2.TextColor3 = Color3.fromRGB(0, 0, 0)
+	TextButton_2.TextSize = 14.000
+
+
+
+	TextBox.Parent = Frame
+	TextBox.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	TextBox.Position = UDim2.new(0.246851385, 0, 0.218009472, 0)
+	TextBox.Size = UDim2.new(0, 200, 0, 50)
+	TextBox.Font = Enum.Font.Cartoon
+	TextBox.PlaceholderColor3 = Color3.fromRGB(178, 178, 178)
+	TextBox.Text = ""
+	TextBox.TextColor3 = Color3.fromRGB(0, 0, 0)
+	TextBox.TextSize = 14.000
+
+
+	TextButton.MouseButton1Click:connect(function()
+		Aimlock = nil
+
+		for i, v in pairs(LocalPlayer.Backpack:GetChildren()) do
+			if v.ClassName == "Tool" and v.Name == "Aimlock Tool" then
+				v:Destroy() 
+			end
+		end
+		for i, v in pairs(LocalPlayer.Character:GetChildren()) do
+			if v.ClassName == "Tool" and v.Name == "Aimlock Tool" then
+				v:Destroy() 
+			elseif v.ClassName == "Tool" then
+				v.Parent = LocalPlayer.Backpack
+			end
+		end
+
+		local AimlockTool = Instance.new("Tool")
+		AimlockTool.Name = "Aimlock Tool"
+		AimlockTool.Parent = LocalPlayer.Backpack
+		AimlockTool.RequiresHandle = false
+		AimlockTool.TextureId = "rbxassetid://6234818097"
+
+		AimlockTool.Activated:Connect(function()
+			local Plr = FindPlrOnMouse()
+
+			if Plr ~= nil and Plr.Character and Plr.Character:FindFirstChild("Head") and Plr.Character:FindFirstChild("UpperTorso") then
+				Aimlock = Plr 
+
+				game:GetService("StarterGui"):SetCore("SendNotification",{
+					Title = "AIMLOCK |Corpse";
+					Text = "Aimlocking towards: " .. Plr.Name .. ", use any gun and shoot anywhere";
+					Button1 = "Ok";
+					Duration = 2.5;
+				})
+			else
+				Aimlock = nil
+
+				game:GetService("StarterGui"):SetCore("SendNotification",{
+					Title = "AIMLOCK | Corpse";
+					Text = "No player clicked on, aimlocking towards mouse as normal";
+					Button1 = "Ok";
+					Duration = 2.5;
+				})
+			end
+		end)
+	end)
+
+	if getrawmetatable then
+		game:GetService("RunService").Heartbeat:Connect(function()
+			if Aimlock ~= nil and Aimlock.Character and Aimlock.Character:FindFirstChild("Head") then
+				game.ReplicatedStorage.MainEvent:FireServer("UpdateMousePos", Aimlock.Character.Head.Position, "Aimlock")
+			elseif Aimlock ~= nil and Aimlock.Character and Aimlock.Character:FindFirstChildOfClass("Part") then
+				game.ReplicatedStorage.MainEvent:FireServer("UpdateMousePos", Aimlock.Character:FindFirstChildOfClass("Part").Position, "Aimlock")
+			elseif Aimlock == nil then
+				game.ReplicatedStorage.MainEvent:FireServer("UpdateMousePos", game:GetService("Players").LocalPlayer:GetMouse().Hit.Position, "Aimlock")
+			end
+		end)
+	else
+		for i = 1, 10 do
+			game:GetService("RunService").Heartbeat:Connect(function()
+				if Aimlock ~= nil and Aimlock.Character and Aimlock.Character:FindFirstChild("Head") then
+					game.ReplicatedStorage.MainEvent:FireServer("UpdateMousePos", Aimlock.Character.Head.Position)
+				elseif Aimlock ~= nil and Aimlock.Character and Aimlock.Character:FindFirstChildOfClass("Part") then
+					game.ReplicatedStorage.MainEvent:FireServer("UpdateMousePos", Aimlock.Character:FindFirstChildOfClass("Part").Position)
+				end
+			end)
+			game:GetService("RunService").RenderStepped:Connect(function()
+				if Aimlock ~= nil and Aimlock.Character and Aimlock.Character:FindFirstChild("Head") then
+					game.ReplicatedStorage.MainEvent:FireServer("UpdateMousePos", Aimlock.Character.Head.Position)
+				elseif Aimlock ~= nil and Aimlock.Character and Aimlock.Character:FindFirstChildOfClass("Part") then
+					game.ReplicatedStorage.MainEvent:FireServer("UpdateMousePos", Aimlock.Character:FindFirstChildOfClass("Part").Position)
+				end
+			end)
+			game:GetService("RunService").Stepped:Connect(function()
+				if Aimlock ~= nil and Aimlock.Character and Aimlock.Character:FindFirstChild("Head") then
+					game.ReplicatedStorage.MainEvent:FireServer("UpdateMousePos", Aimlock.Character.Head.Position)
+				elseif Aimlock ~= nil and Aimlock.Character and Aimlock.Character:FindFirstChildOfClass("Part") then
+					game.ReplicatedStorage.MainEvent:FireServer("UpdateMousePos", Aimlock.Character:FindFirstChildOfClass("Part").Position)
+				end
+			end)
+		end
+	end
+end)
+
+Rejoin.Name = "Rejoin"
+Rejoin.Parent = Page3Frame
+Rejoin.BackgroundColor3 = Color3.fromRGB(55, 55, 55)
+Rejoin.BorderSizePixel = 0
+Rejoin.Position = UDim2.new(0.257403165, 0, 0.569892466, 0)
+Rejoin.Size = UDim2.new(0, 80, 0, 31)
+Rejoin.Font = Enum.Font.SourceSansBold
+Rejoin.Text = "Rejoin"
+Rejoin.TextColor3 = Color3.fromRGB(255, 255, 255)
+Rejoin.TextScaled = true
+Rejoin.TextSize = 14.000
+Rejoin.TextWrapped = true
+Rejoin.MouseButton1Down:Connect(function()
+	TeleportService = game:GetService("TeleportService")
+	placeID_1 = 2788229376  --Da hood
+	wait()
+	TeleportService:Teleport(placeID_1, plr)
+end)
+
+Esp.Name = "Esp"
+Esp.Parent = Page3Frame
+Esp.BackgroundColor3 = Color3.fromRGB(55, 55, 55)
+Esp.BorderSizePixel = 0
+Esp.Position = UDim2.new(0.462414563, 0, 0.569892466, 0)
+Esp.Size = UDim2.new(0, 80, 0, 31)
+Esp.Font = Enum.Font.SourceSansBold
+Esp.Text = "Esp"
+Esp.TextColor3 = Color3.fromRGB(255, 255, 255)
+Esp.TextScaled = true
+Esp.TextSize = 14.000
+Esp.TextWrapped = true
+Esp.MouseButton1Down:Connect(function()
+	loadstring(game:HttpGet("https://pastebin.com/raw/uw2P2fbY", true))()
+end)
+
+Hulk.Name = "Hulk"
+Hulk.Parent = Page3Frame
+Hulk.BackgroundColor3 = Color3.fromRGB(55, 55, 55)
+Hulk.BorderSizePixel = 0
+Hulk.Position = UDim2.new(0.66514802, 0, 0.569892466, 0)
+Hulk.Size = UDim2.new(0, 80, 0, 31)
+Hulk.Font = Enum.Font.SourceSansBold
+Hulk.Text = "Hulk"
+Hulk.TextColor3 = Color3.fromRGB(255, 255, 255)
+Hulk.TextScaled = true
+Hulk.TextSize = 14.000
+Hulk.TextWrapped = true
+Hulk.MouseButton1Down:Connect(function()
+	local plr = game.Players.LocalPlayer
+
+	local SuperSpeed = Instance.new("IntValue",plr.Character.BodyEffects.Movement);SuperSpeed.Name = "SuperSpeed"
+	local HulkJump = Instance.new("IntValue",plr.Character.BodyEffects.Movement);HulkJump.Name = "HulkJump"
+end)
+
+Boneless.Name = "Boneless"
+Boneless.Parent = Page3Frame
+Boneless.BackgroundColor3 = Color3.fromRGB(55, 55, 55)
+Boneless.BorderSizePixel = 0
+Boneless.Position = UDim2.new(0.0501138605, 0, 0.833333313, 0)
+Boneless.Size = UDim2.new(0, 80, 0, 31)
+Boneless.Font = Enum.Font.SourceSansBold
+Boneless.Text = "Boneless"
+Boneless.TextColor3 = Color3.fromRGB(255, 255, 255)
+Boneless.TextScaled = true
+Boneless.TextSize = 14.000
+Boneless.TextWrapped = true
+Boneless.MouseButton1Down:Connect(function()
+	for i,v in ipairs(game.Players.LocalPlayer.Character:GetDescendants()) do
+		if v.Name == "RightElbow" or v.Name == "RightKnee" or v.Name == "RightAnkle" or v.Name == "RightWrist" or v.Name == "RightElbow" or v.Name == "RightShoulder" or "LeftElbow" or v.Name == "LeftKnee" or v.Name == "LeftAnkle" or v.Name == "LeftWrist" or v.Name == "LeftElbow" or v.Name == "LeftShoulder" or v.Name == "Neck" then
+			if v:IsA("Motor6D") and v.Name ~= "Root" and v.Name ~= "Waist" then
+				v:Destroy()
+			end
+		end
+	end
+end)
+
+BuyMask.Name = "BuyMask"
+BuyMask.Parent = Page3Frame
+BuyMask.BackgroundColor3 = Color3.fromRGB(55, 55, 55)
+BuyMask.BorderSizePixel = 0
+BuyMask.Position = UDim2.new(0.257403165, 0, 0.833333313, 0)
+BuyMask.Size = UDim2.new(0, 80, 0, 31)
+BuyMask.Font = Enum.Font.SourceSansBold
+BuyMask.Text = "Buy Mask"
+BuyMask.TextColor3 = Color3.fromRGB(255, 255, 255)
+BuyMask.TextScaled = true
+BuyMask.TextSize = 14.000
+BuyMask.TextWrapped = true
+BuyMask.MouseButton1Down:Connect(function()
+	wait()
+	repeat wait() until plr.Character:FindFirstChild('In-gameMask')
+	local Mask = plr.Character:FindFirstChild('In-gameMask')
+	local Target1 = Mask:FindFirstChild('Handle')
+	Target1.Parent = game.Lighting
+	for _, maskchildren in pairs(Mask:GetChildren()) do
+		maskchildren.Head.Mesh:Destroy()
+		Target1.Parent = Mask
+	end
+end)
+
+BagAll.Name = "BagAll"
+BagAll.Parent = Page3Frame
+BagAll.BackgroundColor3 = Color3.fromRGB(55, 55, 55)
+BagAll.BorderSizePixel = 0
+BagAll.Position = UDim2.new(0.66514802, 0, 0.833333313, 0)
+BagAll.Size = UDim2.new(0, 80, 0, 31)
+BagAll.Font = Enum.Font.SourceSansBold
+BagAll.Text = "BagAll"
+BagAll.TextColor3 = Color3.fromRGB(255, 255, 255)
+BagAll.TextScaled = true
+BagAll.TextSize = 14.000
+BagAll.TextWrapped = true
+BagAll.MouseButton1Down:Connect(function()
+	local bag = true
+	local takingbag = true
+	local Plr = game.Players.LocalPlayer
+	repeat wait(1)
+		if game.Players.LocalPlayer.Character:FindFirstChild("[BrownBag]") == nil then
+			repeat
+				takingbag = true
+				game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-314.580566, 51.1788902, -727.484558)
+				wait()
+				fireclickdetector(workspace.Ignored.Shop["[BrownBag] - $25"].ClickDetector)
+			until Plr.Backpack:FindFirstChild("[BrownBag]")
+			Plr.Backpack["[BrownBag]"].Parent = Plr.Character
+			takingbag = false
+		end
+
+		if takingbag == false then
+			local chars
+			for i, v  in pairs(game.Players:GetPlayers()) do
+				if v.Character and v.Character:FindFirstChild("Christmas_Sock") == nil and v.Character:FindFirstChild("FULLY_LOADED_CHAR") and v ~= Plr then
+					chars = v.Character
+					if Plr.Character:FindFirstChild("[BrownBag]") then
+						Plr.Character["[BrownBag]"]:Activate()
+					end
+					Plr.Character.HumanoidRootPart.CFrame = v.Character.UpperTorso.CFrame * CFrame.new(0, 0, -2)
+				end
+				wait(0.005)
+			end
+			if not chars then
+				bag = false
+			end
+		end
+	until bag == false
+end)
+
+Naked.Name = "Naked"
+Naked.Parent = Page3Frame
+Naked.BackgroundColor3 = Color3.fromRGB(55, 55, 55)
+Naked.BorderSizePixel = 0
+Naked.Position = UDim2.new(0.462414563, 0, 0.833333373, 0)
+Naked.Size = UDim2.new(0, 80, 0, 31)
+Naked.Font = Enum.Font.SourceSansBold
+Naked.Text = "Naked"
+Naked.TextColor3 = Color3.fromRGB(255, 255, 255)
+Naked.TextScaled = true
+Naked.TextSize = 14.000
+Naked.TextWrapped = true
+Naked.MouseButton1Down:Connect(function()
+	if game.Players.LocalPlayer.Character.Shirt then
+		game.Players.LocalPlayer.Character.Shirt:Remove()
+	else
+	end
+	if game.Players.LocalPlayer.Character.Pants then
+		game.Players.LocalPlayer.Character.Pants:Remove()
+	else
+	end
+	if game.Players.LocalPlayer.Character["Shirt Graphic"] then
+		game.Players.LocalPlayer.Character["Shirt Graphic"]:Remove()
+	else
+	end
+end)
+
+-- Scripts:
+
+local function RVBEN_fake_script() -- Frame.drag 
+	local script = Instance.new('LocalScript', Frame)
+
+	local UserInputService = game:GetService("UserInputService")
+	
+	local gui = script.Parent
+	
+	local dragging
+	local dragInput
+	local dragStart
+	local startPos
+	
+	local function update(input)
+		local delta = input.Position - dragStart
+		gui.Position = gui:TweenPosition(UDim2.new(startPos.X.Scale, startPos.X.Offset + delta.X, startPos.Y.Scale, startPos.Y.Offset + delta.Y), 'Out', 'Linear', 0, true); -- drag speed
+	end
+	
+	gui.InputBegan:Connect(function(input)
+		if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
+			dragging = true
+			dragStart = input.Position
+			startPos = gui.Position
+	
+			input.Changed:Connect(function()
+				if input.UserInputState == Enum.UserInputState.End then
+					dragging = false
+				end
+			end)
+		end
+	end)
+	
+	gui.InputChanged:Connect(function(input)
+		if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then
+			dragInput = input
+		end
+	end)
+	
+	UserInputService.InputChanged:Connect(function(input)
+		if input == dragInput and dragging then
+			update(input)
+		end
+	end)
+end
+coroutine.wrap(RVBEN_fake_script)()
+local function MDBDJ_fake_script() -- Frame.close 
+	local script = Instance.new('LocalScript', Frame)
+
+	local Path = script.Parent -- frame to be toggled path here
+	local LP = game.Players.LocalPlayer -- this is a variable
+	local Mouse = LP:GetMouse() --function that returns your mouse
+	
+	Mouse.KeyDown:Connect(function(key) -- making a connection with the mouse to see if a key is pressed
+		--mouse includes keyboard so we use mouse keydown
+		if key == "v" then -- an if then statement
+			if Path.Visible == true then
+				Path.Visible = false
+			else Path.Visible = true
+			end
+		end
+	end)
+	
+end
+coroutine.wrap(MDBDJ_fake_script)()
